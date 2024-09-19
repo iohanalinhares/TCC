@@ -2,19 +2,20 @@
 Este projeto visa criar um jogo educacional WEB em formato RPG para ensinar programação de forma divertida onde o usuário pode escolher entre três linguagens de programação, Python, JavaScript e HTML/CSS. Destinado a uma ampla faixa etária e níveis de conhecimento, o jogo combina perguntas, explicações do assunto, um sistema de dicas e pontuação para incentivar o aprendizado. Animações, sons e música tornam a experiência interativa.
 
 # Escopo
+Em desenvolvimento
 
 # Tecnologias utilizadas
-## Prototipação
+### Prototipação
 A prototipação das telas do jogo, assim como a definição de *tilesets*, cores e estilos foram feitas através do software Figma.
-## Gerenciamento de atividades
+### Gerenciamento de atividades
 As atividades são gerenciadas pelo software Trello, segregadas por nível de prioridade desde o inicio do projeto.
-## Desenvolvimento do jogo
+### Desenvolvimento do jogo
 O jogo vai ser desenvolvido na plataforma de desenvolvimento de jogos Godot, onde será desenvolvida tanto a parte gráfica como os requisitos e integrações do jogo.
-## Banco de Dados
+### Banco de Dados
 O Banco de dados escolhido foi o SQLite, por sua facilidade de entendimento e conexão direta com a plataforma Godot, facilita o desenvolvimento do projeto.
 
 # Requisitos do projeto
-## Requisitos funcionais
+### Requisitos funcionais
 RF01 – O sistema deve permitir que o usuário insira seu nome de usuário e senha para autenticar e acessar a plataforma.
 
 RF02 – O sistema deve permitir que o usuário escolha qual a linguagem deseja aprender.
@@ -39,7 +40,7 @@ RF11 – O sistema deve ajustar a dificuldade das perguntas conforme o usuário 
 
 RF12 – O sistema deve oferecer a possibilidade de suporte e feedback.
 
-## Requisitos não funcionais
+### Requisitos não funcionais
 RNF01 – O sistema deve permitir o aprendizado de múltiplas linguagens de programação.
 
 RNF02 – O sistema executa uma música ambiente durante a execução do jogo.
@@ -58,16 +59,16 @@ RFN07 – O sistema deve ter suporte bilíngue (português e inglês).
 A metodologia utilizada desde o desenvolvimento da ideia do projeto foi Kanban, onde trabalho com sprints de 2 semanas, podendo assim gerenciar as atividades a serem desenvolvidas dentro desse período. 
 
 # Pacotes de entrega
-## Gerenciamento de projeto
+### Gerenciamento de projeto
 - Definir prazo das atividades
 
-## Pontapé inicial
+### Pontapé inicial
 - Criar projeto no Godot
 - Criar repositório GitHub para publicação e versionamento do projeto
 - Criar banco de dados no SQLite
 - Escolher Tilesets para utilizar no projeto
 
-# Desenvolvimento de telas
+### Desenvolvimento de telas
 - Desenvolver tela de Login
 - Desenvolver Mapa do Jogo
 - Desenvolver tela de Configurações
