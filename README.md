@@ -1,18 +1,15 @@
 # Objetivo do projeto
-Este projeto visa criar um jogo educacional WEB em formato RPG para ensinar programação de forma divertida onde o usuário pode escolher entre três linguagens de programação, Python, JavaScript e HTML/CSS. Destinado a uma ampla faixa etária e níveis de conhecimento, o jogo combina perguntas, explicações do assunto, um sistema de dicas e pontuação para incentivar o aprendizado. Animações, sons e música tornam a experiência interativa.
-
-# Escopo
-Em desenvolvimento
+Este projeto visa criar um jogo educacional WEB em formato RPG para ensinar programação de forma divertida onde o usuário pode escolher entre três linguagens de programação, Python, JavaScript e HTML/CSS. Destinado a uma ampla faixa etária e níveis de conhecimento, o jogo combina perguntas, explicações do assunto, um sistema de dicas e pontuação para incentivar o aprendizado. Animações, sons e música tornam a experiência interativa, e uma funcionalidade de feedback permite melhorias contínuas no jogo.
 
 # Tecnologias utilizadas
 ### Prototipação
-A prototipação das telas do jogo, assim como a definição de *tilesets*, cores e estilos foram feitas através do software Figma.
+Para a criação e prototipação das telas do jogo, foi utilizado o software **Figma**, uma ferramenta amplamente reconhecida por sua eficiência na elaboração de interfaces visuais. O Figma permitiu a definição da paletas de cores e estilos, garantindo a coerência visual do jogo desde as fases iniciais do desenvolvimento.
 ### Gerenciamento de atividades
-As atividades são gerenciadas pelo software Trello, segregadas por nível de prioridade desde o inicio do projeto.
+O gerenciamento das atividades e tarefas do projeto é realizado por meio da plataforma **Trello**. As tarefas são organizadas em quadros, sendo classificadas de acordo com o nível de prioridade e estágio de desenvolvimento.
 ### Desenvolvimento do jogo
-O jogo vai ser desenvolvido na plataforma de desenvolvimento de jogos Godot, onde será desenvolvida tanto a parte gráfica como os requisitos e integrações do jogo.
+A plataforma escolhida para o desenvolvimento do jogo é a **Godot**, uma engine de código aberto que oferece uma grande flexibilidade para a criação tanto da parte gráfica quanto dos requisitos funcionais e integrações do jogo.
 ### Banco de Dados
-O Banco de dados escolhido foi o SQLite, por sua facilidade de entendimento e conexão direta com a plataforma Godot, facilita o desenvolvimento do projeto.
+O banco de dados utilizado será o **SQLite**, uma solução leve e eficiente que se integra facilmente à plataforma Godot. O SQLite foi escolhido pela sua simplicidade de implementação e por fornecer uma conexão direta e rápida com o jogo, o que é essencial para garantir o bom desempenho do projeto sem comprometer a qualidade das funcionalidades de armazenamento de dados.
 
 # Requisitos do projeto
 ### Requisitos funcionais
@@ -56,7 +53,7 @@ RFN06 – O sistema deve apresentar um bom desempenho e baixa latência.
 RFN07 – O sistema deve ter suporte bilíngue (português e inglês).
 
 # Metodologia de organização de tarefas
-A metodologia utilizada desde o desenvolvimento da ideia do projeto foi Kanban, onde trabalho com sprints de 2 semanas, podendo assim gerenciar as atividades a serem desenvolvidas dentro desse período. 
+A metodologia de gerenciamento de tarefas adotada desde o início do projeto é o **Kanban**, uma abordagem visual e flexível que facilita o acompanhamento do progresso das atividades. Essa estrutura permite uma visualização clara do fluxo de trabalho, identificando gargalos e ajustando o ritmo de desenvolvimento conforme necessário. Com essa metodologia, o processo se torna mais ágil, promovendo entregas frequentes e contínuas, além de proporcionar uma gestão eficiente das demandas e recursos ao longo do projeto.
 
 # Pacotes de entrega
 ### Gerenciamento de projeto
@@ -69,17 +66,18 @@ A metodologia utilizada desde o desenvolvimento da ideia do projeto foi Kanban, 
 - Escolher Tilesets para utilizar no projeto
 
 ### Desenvolvimento de telas
-- Desenvolver tela de Login
 - Desenvolver Mapa do Jogo
-- Desenvolver tela de Configurações
-- Desenvolver tela de Atividades
-- Desenvolver tela de Compra de Dicas
+- Desenvolver tela de Login
 - Desenvolver tela de Criação de Conta
 - Desenvolver tela de Recuperação de Senha
-- Desenvolver tela de Nível Concluído
+- Desenvolver tela de Configurações
 - Desenvolver tela de Estudo Sobre o Assunto
-- Desenvolver tela de Feedback
+- Desenvolver tela de Atividades
 - Desenvolver tela de Dicas
+- Desenvolver tela de Compra de Dicas
+- Desenvolver tela de Nível Concluído
+- Desenvolver tela de Feedback
 - Desenvolver tela de Ajuda (termos básicos utilizados nas atividades)
 
 # Acesso ao projeto
+Em desenvolvimento
