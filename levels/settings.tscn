@@ -1,0 +1,122 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjqfx76h27pk1"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_tk1xo"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_tk1xo")
+metadata/_edit_vertical_guides_ = [500.0, 1420.0, 960.0, 600.0, 1320.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color(0.027451, 0.0823529, 0.145098, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 500.0
+offset_right = 1420.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color(0.823529, 0.886275, 0.882353, 0.0392157)
+
+[node name="Title" type="HBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 1420.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="title" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.823529, 0.886275, 0.882353, 1)
+theme_override_font_sizes/font_size = 50
+text = "Configurações"
+
+[node name="Sons" type="HBoxContainer" parent="."]
+offset_left = 595.0
+offset_top = 276.0
+offset_right = 1177.0
+offset_bottom = 326.0
+
+[node name="CheckButton" type="CheckButton" parent="Sons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sons"
+
+[node name="Music" type="HBoxContainer" parent="."]
+offset_left = 594.0
+offset_top = 366.0
+offset_right = 819.0
+offset_bottom = 416.0
+
+[node name="CheckButton" type="CheckButton" parent="Music"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Música: "
+
+[node name="Save" type="Button" parent="."]
+offset_left = 1059.0
+offset_top = 923.0
+offset_right = 1231.0
+offset_bottom = 987.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Salvar"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 694.0
+offset_top = 923.0
+offset_right = 866.0
+offset_bottom = 987.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Voltar"
+
+[node name="Language" type="HBoxContainer" parent="."]
+offset_left = 600.0
+offset_top = 457.0
+offset_right = 1182.0
+offset_bottom = 507.0
+
+[node name="languege" type="Label" parent="Language"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Idioma: "
+
+[node name="selected-language" type="Label" parent="Language"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="Username" type="HBoxContainer" parent="."]
+offset_left = 600.0
+offset_top = 551.0
+offset_right = 1182.0
+offset_bottom = 601.0
+
+[node name="username" type="Label" parent="Username"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Nome do usuário: "
+
+[node name="selected-username" type="Label" parent="Username"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[connection signal="pressed" from="Sons/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="button_down" from="Save" to="." method="_on_save_button_down"]
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]

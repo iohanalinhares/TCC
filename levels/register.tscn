@@ -1,0 +1,181 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5jillrcn4i73"]
+
+[ext_resource type="Script" path="res://scripts/register.gd" id="1_bcdcu"]
+
+[node name="Register" type="Node2D"]
+script = ExtResource("1_bcdcu")
+metadata/_edit_vertical_guides_ = [500.0, 1420.0, 960.0, 600.0, 1320.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color(0.027451, 0.0823529, 0.145098, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 500.0
+offset_right = 1420.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color(0.823529, 0.886275, 0.882353, 0.0392157)
+
+[node name="Title" type="HBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 1420.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="title" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.823529, 0.886275, 0.882353, 1)
+theme_override_font_sizes/font_size = 50
+text = "Cadastro"
+
+[node name="Login" type="HBoxContainer" parent="."]
+offset_left = 600.0
+offset_top = 790.0
+offset_right = 1170.0
+offset_bottom = 840.0
+
+[node name="login" type="Label" parent="Login"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Já possui uma conta?"
+
+[node name="login-button" type="Button" parent="Login"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.698039, 0.509804, 0.384314, 1)
+theme_override_colors/font_pressed_color = Color(0.823529, 0.74902, 0.682353, 1)
+theme_override_colors/font_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_font_sizes/font_size = 30
+text = "Faça login"
+flat = true
+
+[node name="Username" type="VBoxContainer" parent="."]
+offset_left = 600.0
+offset_top = 301.0
+offset_right = 1320.0
+offset_bottom = 408.0
+
+[node name="name" type="Label" parent="Username"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Nome de usuário:"
+
+[node name="input-name" type="LineEdit" parent="Username"]
+layout_mode = 2
+theme_override_colors/clear_button_color_pressed = Color(0.91664, 0.91664, 0.91664, 1)
+theme_override_colors/font_outline_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+virtual_keyboard_type = 5
+structured_text_bidi_override = 3
+
+[node name="Password" type="VBoxContainer" parent="."]
+offset_left = 600.0
+offset_top = 455.0
+offset_right = 1320.0
+offset_bottom = 544.0
+
+[node name="password" type="Label" parent="Password"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Senha:"
+
+[node name="input-password" type="LineEdit" parent="Password"]
+layout_mode = 2
+theme_override_colors/clear_button_color_pressed = Color(0.91664, 0.91664, 0.91664, 1)
+theme_override_colors/font_outline_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+virtual_keyboard_type = 6
+structured_text_bidi_override = 3
+
+[node name="RegisterButton" type="Button" parent="."]
+offset_left = 883.0
+offset_top = 922.0
+offset_right = 1055.0
+offset_bottom = 986.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Cadastrar"
+
+[node name="ConfirmPassword" type="VBoxContainer" parent="."]
+offset_left = 600.0
+offset_top = 614.0
+offset_right = 1320.0
+offset_bottom = 703.0
+
+[node name="confirm-password" type="Label" parent="ConfirmPassword"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Confirme sua senha:"
+
+[node name="input-confirm-password" type="LineEdit" parent="ConfirmPassword"]
+layout_mode = 2
+theme_override_colors/clear_button_color_pressed = Color(0.91664, 0.91664, 0.91664, 1)
+theme_override_colors/font_outline_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+virtual_keyboard_type = 6
+structured_text_bidi_override = 3
+
+[node name="user-exists" type="Label" parent="."]
+visible = false
+offset_left = 832.0
+offset_top = 875.0
+offset_right = 1108.0
+offset_bottom = 903.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "O usuário já está cadastrado"
+
+[node name="required-username" type="Label" parent="."]
+visible = false
+offset_left = 600.0
+offset_top = 395.0
+offset_right = 847.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Este campo é obrigatório!"
+
+[node name="required-password" type="Label" parent="."]
+visible = false
+offset_left = 600.0
+offset_top = 549.0
+offset_right = 847.0
+offset_bottom = 577.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Este campo é obrigatório!"
+
+[node name="required-confirm-password" type="Label" parent="."]
+visible = false
+offset_left = 600.0
+offset_top = 708.0
+offset_right = 847.0
+offset_bottom = 736.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Este campo é obrigatório!"
+
+[connection signal="button_down" from="Login/login-button" to="." method="_on_loginbutton_button_down"]
+[connection signal="button_down" from="RegisterButton" to="." method="_on_register_button_button_down"]

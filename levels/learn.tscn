@@ -1,0 +1,431 @@
+[gd_scene load_steps=10 format=3 uid="uid://unsmhnw0qb6q"]
+
+[ext_resource type="Texture2D" uid="uid://bvo688voi7dlh" path="res://assets/images/introdution.png" id="1_3pfx6"]
+[ext_resource type="Script" path="res://scripts/learnButtons.gd" id="1_keidf"]
+[ext_resource type="Texture2D" uid="uid://clwr15iwnk5us" path="res://assets/images/variables.png" id="2_5b2e3"]
+[ext_resource type="Texture2D" uid="uid://c4ncy2638h8lf" path="res://assets/images/operators.png" id="3_08d2i"]
+[ext_resource type="Texture2D" uid="uid://drubhbgg2dww5" path="res://assets/images/structure.png" id="4_blkrg"]
+[ext_resource type="Texture2D" uid="uid://dffybx6wd7i10" path="res://assets/images/loop_for.png" id="5_wdudm"]
+[ext_resource type="Texture2D" uid="uid://m51awtcokmmk" path="res://assets/images/loop_while.png" id="6_waj3l"]
+[ext_resource type="Texture2D" uid="uid://dbmnicg6cl75j" path="res://assets/images/loop_do_while.png" id="7_fwl6r"]
+[ext_resource type="Texture2D" uid="uid://b1k1asp22558s" path="res://assets/images/function.png" id="8_ry63b"]
+
+[node name="Learn" type="Node2D"]
+z_index = 2
+script = ExtResource("1_keidf")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 920.0
+offset_bottom = 828.0
+size_flags_horizontal = 3
+color = Color(0.027451, 0.0823529, 0.145098, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_top = 49.0
+offset_right = 920.0
+offset_bottom = 104.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Javascript"
+horizontal_alignment = 1
+
+[node name="Introdution" type="ScrollContainer" parent="."]
+offset_left = 50.0
+offset_top = 230.0
+offset_right = 870.0
+offset_bottom = 630.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Introdution"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="Introdution/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Introdução"
+
+[node name="content" type="Label" parent="Introdution/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "JavaScript é uma linguagem de programação usada principalmente para adicionar interatividade a páginas da web. Ele é executado diretamente no navegador, permitindo a criação de elementos dinâmicos como animações, validação de formulários, e muito mais. Para começar a usar JavaScript, basta inserir o código dentro da tag <script> em um arquivo HTML, seja diretamente no cabeçalho, corpo da página, ou em um arquivo externo.
+
+Exemplo de como incluir um script:
+"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Introdution/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3pfx6")
+stretch_mode = 3
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 715.0
+offset_right = 225.0
+offset_bottom = 765.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "Sair"
+
+[node name="Next" type="Button" parent="."]
+offset_left = 709.0
+offset_top = 715.0
+offset_right = 859.0
+offset_bottom = 765.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "Próximo"
+
+[node name="Previous" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 715.0
+offset_right = 677.0
+offset_bottom = 765.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "Anterior"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 50.0
+offset_top = 149.0
+offset_right = 450.0
+offset_bottom = 199.0
+theme_override_constants/separation = 20
+
+[node name="Step1" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="Step2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "2"
+
+[node name="Step3" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "3"
+
+[node name="Step4" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "4"
+
+[node name="Step5" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "5"
+
+[node name="Step6" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 25
+text = "6"
+
+[node name="Variables" type="ScrollContainer" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 230.0
+offset_right = 870.0
+offset_bottom = 630.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Variables"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="Variables/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Variáveis e tipos de dados"
+
+[node name="content" type="Label" parent="Variables/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Variáveis são usadas para armazenar dados que podem ser reutilizados ou manipulados durante a execução de um programa. Em JavaScript, podemos declarar variáveis com var (menos recomendada hoje), let (valor que pode mudar) e const (valor constante que não pode ser alterado). Os principais tipos de dados são:
+•    String: Cadeias de caracteres, como \"Olá, mundo!\".
+•    Number: Números, como 42 ou 3.14.
+•    Boolean: Verdadeiro ou falso (true ou false).
+•    Undefined: Variável que foi declarada mas não recebeu valor.
+•    Null: Um valor explicitamente definido como vazio.
+"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Variables/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_5b2e3")
+stretch_mode = 3
+
+[node name="Operators" type="ScrollContainer" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 230.0
+offset_right = 870.0
+offset_bottom = 630.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Operators"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="Operators/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Operadores"
+
+[node name="content" type="Label" parent="Operators/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Operadores permitem realizar cálculos, comparar valores, ou realizar operações lógicas. Alguns dos operadores mais usados são:
+
+•    Aritméticos: + (adição), - (subtração), * (multiplicação), / (divisão), % (resto da divisão).
+
+•    Comparação: == (igual), === (estritamente igual), != (diferente), >, <, >=, <=.
+
+•    Lógicos: && (E), || (OU), ! (NÃO).
+
+Exemplo de comparação:"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Operators/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_08d2i")
+stretch_mode = 3
+
+[node name="ConditionalStructure" type="ScrollContainer" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 230.0
+offset_right = 870.0
+offset_bottom = 630.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConditionalStructure"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="ConditionalStructure/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Estrutura Condicional"
+
+[node name="content" type="Label" parent="ConditionalStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "A estrutura condicional é usada para tomar decisões no código com base em uma condição lógica. Ela permite que diferentes blocos de código sejam executados dependendo se uma condição for verdadeira ou falsa. O principal uso da estrutura condicional em JavaScript é o if, acompanhado do else e else if para lidar com múltiplas condições."
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="ConditionalStructure/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_blkrg")
+stretch_mode = 3
+
+[node name="content2" type="Label" parent="ConditionalStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Neste caso, o código verifica a nota e, dependendo da condição, exibe uma mensagem correspondente. A ordem das condições é importante, pois o JavaScript executa a primeira que for verdadeira."
+autowrap_mode = 3
+
+[node name="LoopStructure" type="ScrollContainer" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 230.0
+offset_right = 870.0
+offset_bottom = 630.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoopStructure"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="LoopStructure/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Estrutura de Repetição"
+
+[node name="content" type="Label" parent="LoopStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "As estruturas de repetição (loops) são usadas para executar um bloco de código várias vezes, até que uma condição seja satisfeita. Existem diferentes tipos de loops em JavaScript:"
+autowrap_mode = 3
+
+[node name="titleFor" type="Label" parent="LoopStructure/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "FOR"
+
+[node name="contentFor" type="Label" parent="LoopStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "O for é uma estrutura de repetição usada quando sabemos quantas vezes o loop deve ser executado. Ele é dividido em três partes: inicialização, condição e incremento.
+
+Sintaxe do for:"
+autowrap_mode = 3
+
+[node name="TextureFor" type="TextureRect" parent="LoopStructure/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_wdudm")
+stretch_mode = 3
+
+[node name="contentForComplement" type="Label" parent="LoopStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Aqui, o loop começa com i = 0 e continua enquanto i for menor que 5, incrementando i em 1 a cada iteração. O código dentro do loop será executado 5 vezes, exibindo os valores de 0 a 4 no console.
+
+"
+autowrap_mode = 3
+
+[node name="titleWhile" type="Label" parent="LoopStructure/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "WHILE"
+
+[node name="contentWhile" type="Label" parent="LoopStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "O while é usado quando a quantidade de repetições não é conhecida previamente. Ele continua a executar o bloco de código enquanto a condição for verdadeira.
+
+Sintaxe do while:"
+autowrap_mode = 3
+
+[node name="TextureWhile" type="TextureRect" parent="LoopStructure/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_waj3l")
+stretch_mode = 3
+
+[node name="contentWhileComplement" type="Label" parent="LoopStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Nesse exemplo, o loop será executado enquanto contador for menor que 3. A cada iteração, contador é incrementado em 1, e o valor é exibido no console.
+
+"
+autowrap_mode = 3
+
+[node name="titleDoWhile" type="Label" parent="LoopStructure/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "DO WHILE"
+
+[node name="contentDoWhile" type="Label" parent="LoopStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "O do while é similar ao while, mas garante que o bloco de código seja executado ao menos uma vez, independentemente da condição.
+
+Sintaxe do do while:"
+autowrap_mode = 3
+
+[node name="TextureDoWhile" type="TextureRect" parent="LoopStructure/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_fwl6r")
+stretch_mode = 3
+
+[node name="contentDoWhileComplement" type="Label" parent="LoopStructure/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Aqui, o código será executado primeiro, e só depois a condição será verificada. Mesmo que i já fosse maior que 3 no início, a primeira execução aconteceria."
+autowrap_mode = 3
+
+[node name="Functions" type="ScrollContainer" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 230.0
+offset_right = 870.0
+offset_bottom = 630.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Functions"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="Functions/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Funções"
+
+[node name="content" type="Label" parent="Functions/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Funções são blocos de código reutilizáveis que podem ser chamados para realizar uma tarefa específica. Elas podem receber parâmetros e retornar um valor. A função tradicional é definida com a palavra-chave function.
+
+Exemplo de função tradicional:"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Functions/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_ry63b")
+stretch_mode = 3
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="HBoxContainer/Step1" to="." method="_on_step_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Step2" to="." method="_on_step_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Step3" to="." method="_on_step_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/Step4" to="." method="_on_step_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/Step5" to="." method="_on_step_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/Step6" to="." method="_on_step_6_pressed"]

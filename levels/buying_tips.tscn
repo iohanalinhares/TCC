@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=3 uid="uid://blfmiohee4ula"]
+
+[ext_resource type="Texture2D" uid="uid://ic584jekht6h" path="res://assets/icons/ai-icon.png" id="1_jtgtq"]
+[ext_resource type="Texture2D" uid="uid://d3xe1c2dgwxt1" path="res://assets/icons/lamp-icon.png" id="2_ymnbx"]
+[ext_resource type="Texture2D" uid="uid://ouwui4byowoh" path="res://assets/icons/cards-icon.png" id="3_txuhg"]
+[ext_resource type="Texture2D" uid="uid://c0jlxperee6bc" path="res://assets/icons/money.png" id="4_vdq2h"]
+
+[node name="BuyingTips" type="Node2D"]
+metadata/_edit_vertical_guides_ = [500.0, 1420.0, 960.0, 600.0, 1320.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color(0.027451, 0.0823529, 0.145098, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 500.0
+offset_right = 1420.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color(0.823529, 0.886275, 0.882353, 0.0392157)
+
+[node name="Title" type="HBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 1420.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.823529, 0.886275, 0.882353, 1)
+theme_override_font_sizes/font_size = 50
+text = "Loja de dicas"
+
+[node name="Save" type="Button" parent="."]
+offset_left = 1059.0
+offset_top = 923.0
+offset_right = 1231.0
+offset_bottom = 987.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Salvar"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 694.0
+offset_top = 923.0
+offset_right = 866.0
+offset_bottom = 987.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Voltar"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 601.0
+offset_top = 246.0
+offset_right = 811.0
+offset_bottom = 456.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Button" type="Button" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 145.0
+offset_right = 180.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "$100"
+
+[node name="AI" type="TextureRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 46.0
+offset_right = 125.0
+offset_bottom = 103.0
+texture = ExtResource("1_jtgtq")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 856.0
+offset_top = 246.0
+offset_right = 1066.0
+offset_bottom = 456.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Button" type="Button" parent="ColorRect3"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 145.0
+offset_right = 180.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "$100"
+
+[node name="Lamp" type="TextureRect" parent="ColorRect3"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 46.0
+offset_right = 134.0
+offset_bottom = 106.0
+texture = ExtResource("2_ymnbx")
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 1110.0
+offset_top = 246.0
+offset_right = 1320.0
+offset_bottom = 456.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Button" type="Button" parent="ColorRect4"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 145.0
+offset_right = 180.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "$100"
+
+[node name="Cards" type="TextureRect" parent="ColorRect4"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 46.0
+offset_right = 134.0
+offset_bottom = 103.0
+texture = ExtResource("3_txuhg")
+
+[node name="Money" type="TextureRect" parent="."]
+offset_left = 1347.0
+offset_top = 51.0
+offset_right = 1394.0
+offset_bottom = 98.0
+texture = ExtResource("4_vdq2h")

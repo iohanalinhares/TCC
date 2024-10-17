@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cea5oh6vh00dm"]
+
+[ext_resource type="Texture2D" uid="uid://cn7qr87nbgttw" path="res://assets/kenney_ui-pack/Vector/Blue/button_square_border.svg" id="1_dxj3h"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture = ExtResource("1_dxj3h")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "testando testando testaando"
+vertical_alignment = 1
