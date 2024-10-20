@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://unsmhnw0qb6q"]
+[gd_scene load_steps=11 format=3 uid="uid://unsmhnw0qb6q"]
 
 [ext_resource type="Texture2D" uid="uid://bvo688voi7dlh" path="res://assets/images/introdution.png" id="1_3pfx6"]
 [ext_resource type="Script" path="res://scripts/learnButtons.gd" id="1_keidf"]
 [ext_resource type="Texture2D" uid="uid://clwr15iwnk5us" path="res://assets/images/variables.png" id="2_5b2e3"]
+[ext_resource type="Texture2D" uid="uid://ctxd0v28pjbav" path="res://assets/images/background.png" id="2_yrk2o"]
 [ext_resource type="Texture2D" uid="uid://c4ncy2638h8lf" path="res://assets/images/operators.png" id="3_08d2i"]
 [ext_resource type="Texture2D" uid="uid://drubhbgg2dww5" path="res://assets/images/structure.png" id="4_blkrg"]
 [ext_resource type="Texture2D" uid="uid://dffybx6wd7i10" path="res://assets/images/loop_for.png" id="5_wdudm"]
@@ -14,11 +15,10 @@
 z_index = 2
 script = ExtResource("1_keidf")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_right = 920.0
-offset_bottom = 828.0
-size_flags_horizontal = 3
-color = Color(0.027451, 0.0823529, 0.145098, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yrk2o")
 
 [node name="Label" type="Label" parent="."]
 offset_top = 49.0

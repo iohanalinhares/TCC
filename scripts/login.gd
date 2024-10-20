@@ -9,9 +9,6 @@ func _ready() -> void:
 	$"Password/input-password".secret = true
 	pass
 
-func _process(delta: float) -> void:
-	pass
-
 func _on_newuserbutton_button_down() -> void:
 	get_tree().change_scene_to_file("res://levels/register.tscn")
 	pass

@@ -18,10 +18,6 @@ func _ready() -> void:
 	
 	languege.text = query_result[0].language
 	username.text = query_result[0].username
-
-	pass
-
-func _process(delta: float) -> void:
 	pass
 
 func _on_back_button_down() -> void:

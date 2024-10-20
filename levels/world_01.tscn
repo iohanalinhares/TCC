@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://0qt3lly5vgsl"]
+[gd_scene load_steps=77 format=3 uid="uid://0qt3lly5vgsl"]
 
 [ext_resource type="Script" path="res://scripts/databaseConnection.gd" id="1_bxvmb"]
 [ext_resource type="Texture2D" uid="uid://r1js2khe2e28" path="res://assets/kenney_toon-characters-1/Female adventurer/Tilesheet/character_femaleAdventurer_sheet.png" id="1_kgetr"]
@@ -13,6 +13,10 @@
 [ext_resource type="Script" path="res://scripts/challenge01.gd" id="10_v0aed"]
 [ext_resource type="Script" path="res://scripts/learn.gd" id="12_3d4cf"]
 [ext_resource type="Texture2D" uid="uid://tnbtkkljc5r8" path="res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_question.png" id="12_ph3wi"]
+[ext_resource type="Script" path="res://scripts/challange_03.gd" id="13_jp3fl"]
+[ext_resource type="Script" path="res://scripts/challange_02.gd" id="14_0vmot"]
+[ext_resource type="Script" path="res://scripts/challange_04.gd" id="14_3vvaj"]
+[ext_resource type="Script" path="res://scripts/challange_05.gd" id="15_pjdi4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y4asn"]
 tile_data = PackedInt32Array(0, 196613, 1)
@@ -518,25 +522,77 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Challange01" type="Node2D" parent="."]
 position = Vector2(1140, 652)
-script = ExtResource("10_v0aed")
 
 [node name="SpriteChallenge01" type="Sprite2D" parent="Challange01"]
 texture = ExtResource("10_45p1m")
 
 [node name="ColisionChallange01" type="Area2D" parent="Challange01"]
+script = ExtResource("10_v0aed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Challange01/ColisionChallange01"]
 position = Vector2(-1, 9.5)
 shape = SubResource("RectangleShape2D_pp7j7")
 
+[node name="Challange02" type="Node2D" parent="."]
+position = Vector2(692, 658)
+
+[node name="SpriteChallenge01" type="Sprite2D" parent="Challange02"]
+texture = ExtResource("10_45p1m")
+
+[node name="ColisionChallange01" type="Area2D" parent="Challange02"]
+script = ExtResource("14_0vmot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange02/ColisionChallange01"]
+position = Vector2(-1, 9.5)
+shape = SubResource("RectangleShape2D_pp7j7")
+
+[node name="Challange03" type="Node2D" parent="."]
+position = Vector2(499, 323)
+
+[node name="SpriteChallenge01" type="Sprite2D" parent="Challange03"]
+texture = ExtResource("10_45p1m")
+
+[node name="ColisionChallange01" type="Area2D" parent="Challange03"]
+script = ExtResource("13_jp3fl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange03/ColisionChallange01"]
+position = Vector2(-1, 9.5)
+shape = SubResource("RectangleShape2D_pp7j7")
+
+[node name="Challange04" type="Node2D" parent="."]
+position = Vector2(899, 177)
+
+[node name="SpriteChallenge01" type="Sprite2D" parent="Challange04"]
+texture = ExtResource("10_45p1m")
+
+[node name="ColisionChallange01" type="Area2D" parent="Challange04"]
+script = ExtResource("14_3vvaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange04/ColisionChallange01"]
+position = Vector2(-1, 9.5)
+shape = SubResource("RectangleShape2D_pp7j7")
+
+[node name="Challange05" type="Node2D" parent="."]
+position = Vector2(1425, 469)
+
+[node name="SpriteChallenge01" type="Sprite2D" parent="Challange05"]
+texture = ExtResource("10_45p1m")
+
+[node name="ColisionChallange01" type="Area2D" parent="Challange05"]
+script = ExtResource("15_pjdi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange05/ColisionChallange01"]
+position = Vector2(-1, 9.5)
+shape = SubResource("RectangleShape2D_pp7j7")
+
 [node name="Learn" type="Node2D" parent="."]
 position = Vector2(1364, 336)
-script = ExtResource("12_3d4cf")
 
 [node name="SpriteLearn" type="Sprite2D" parent="Learn"]
 texture = ExtResource("12_ph3wi")
 
 [node name="AreaLearn" type="Area2D" parent="Learn"]
+script = ExtResource("12_3d4cf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Learn/AreaLearn"]
 position = Vector2(-1, 9.5)
