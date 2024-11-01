@@ -48,7 +48,6 @@ func _on_register_button_button_down() -> void:
 	else:
 		alert_confirm_password.visible = false
 		
-	# FIM DAS 
 	
 	# PASSA A SENHA PARA A FUNÇÃO DE CRIPTOGRAFIA
 	var hashed_password = hash_password(password)
