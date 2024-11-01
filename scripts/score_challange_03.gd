@@ -4,7 +4,7 @@ var database = SQLite
 var money = 0
 var user_id = 11
 var resposta_selecionada = 0
-var resposta_correta = 3
+var resposta_correta = 1
 var condition
 var query_result
 
@@ -37,6 +37,7 @@ func _on_save_pressed() -> void:
 		print("Nenhuma resposta selecionada!")
 	pass
 
+
 func verificar_resposta(numero_resposta):
 	if numero_resposta == resposta_correta:
 		money = query_result[0].money + 10
@@ -44,6 +45,6 @@ func verificar_resposta(numero_resposta):
 		var update_data = {"money": money}
 		var update_result = database.update_rows("users", condition, update_data)
 		print("Resposta correta!")
+		database.close_db()
 	else:
 		print("Resposta incorreta!")
-	database.close_db()

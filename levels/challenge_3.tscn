@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci672kxyj722o"]
+[gd_scene load_steps=3 format=3 uid="uid://ci672kxyj722o"]
 
+[ext_resource type="Script" path="res://scripts/score_challange_03.gd" id="1_826wp"]
 [ext_resource type="Texture2D" uid="uid://ctxd0v28pjbav" path="res://assets/images/background.png" id="1_iimhu"]
 
 [node name="Challange" type="Node2D"]
 z_index = 5
 position = Vector2(475, 429)
+script = ExtResource("1_826wp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -127,3 +129,5 @@ theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 text = "D - ) somar(a, b) = { return a + b; }"
 alignment = 0
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

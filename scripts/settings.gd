@@ -14,8 +14,6 @@ func _ready() -> void:
 	var languege = $"Language/selected-language"
 	var username = $"Username/selected-username"
 	
-	print(query_result[0].music == 1)
-	
 	languege.text = query_result[0].language
 	username.text = query_result[0].username
 	pass

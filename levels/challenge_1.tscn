@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ctxd0v28pjbav" path="res://assets/images/background.png" id="1_8v22i"]
 [ext_resource type="Texture2D" uid="uid://bu7h0q3plkua8" path="res://assets/images/activities/activity_1.png" id="1_dd8vb"]
-[ext_resource type="Script" path="res://scripts/challenge_1.gd" id="1_xmrlt"]
+[ext_resource type="Script" path="res://scripts/score_challange_01.gd" id="1_xmrlt"]
 
 [node name="Challange" type="Node2D"]
 z_index = 5
@@ -135,4 +135,3 @@ text = "D - undefined"
 alignment = 0
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Option_03" to="." method="_on_option_03_pressed"]
