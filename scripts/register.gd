@@ -18,6 +18,7 @@ func _on_register_button_button_down() -> void:
 	var username = $"Username/input-name".text
 	var password = $"Password/input-password".text
 	var confirmPassword = $"ConfirmPassword/input-confirm-password".text
+	var language = $"Language/OptionButton".get_selected_id()
 	var alert_username = $"required-username"
 	var alert_password = $"required-password"
 	var alert_confirm_password = $"required-confirm-password"
@@ -61,13 +62,21 @@ func _on_register_button_button_down() -> void:
 		alert_label.visible = true
 		return
 	# FIM DA VERIFICAÇÃO
+	
+	#VERIFICAÇÃO DO IDIOMA SELECIONADO
+	if language:
+		if language == 1:
+			language = 'portuguese'
+		else:
+			language = 'english'
 		
+	print("idioma: ", language)
 	var data = {
 		"username": $"Username/input-name".text,
 		"password": hashed_password,
 		"money": 0,
 		"level": 1,
-		"language": "portuguese",
+		"language": language,
 		"sounds": true,
 		"music": true,
 	}

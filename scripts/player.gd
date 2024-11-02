@@ -5,6 +5,9 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animation := $anim as AnimatedSprite2D
 
+func _ready():
+	add_to_group("player")
+
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():

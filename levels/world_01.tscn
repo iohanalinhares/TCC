@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://0qt3lly5vgsl"]
+[gd_scene load_steps=72 format=3 uid="uid://0qt3lly5vgsl"]
 
 [ext_resource type="Script" path="res://scripts/databaseConnection.gd" id="1_bxvmb"]
 [ext_resource type="Texture2D" uid="uid://r1js2khe2e28" path="res://assets/kenney_toon-characters-1/Female adventurer/Tilesheet/character_femaleAdventurer_sheet.png" id="1_kgetr"]
@@ -9,10 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://fhx2k371lc0e" path="res://assets/CoolSchool_tileset_48px/CoolSchool_for_MV_MZ/division-left.png" id="3_agypk"]
 [ext_resource type="Texture2D" uid="uid://cqoxh38m0orrt" path="res://assets/CoolSchool_tileset_48px/CoolSchool_for_MV_MZ/Union.png" id="5_m8rp4"]
 [ext_resource type="Texture2D" uid="uid://c3g4gu3c8e7fb" path="res://assets/CoolSchool_tileset_48px/CoolSchool_for_MV_MZ/division-botton.png" id="5_vstlk"]
-[ext_resource type="Texture2D" uid="uid://dram7e6ajqxcu" path="res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_exclamations.png" id="10_45p1m"]
-[ext_resource type="Script" path="res://scripts/teste.gd" id="11_ufd6u"]
+[ext_resource type="Script" path="res://scripts/collisionChallangeLearn.gd" id="11_ufd6u"]
 [ext_resource type="Texture2D" uid="uid://tnbtkkljc5r8" path="res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_question.png" id="12_ph3wi"]
-[ext_resource type="Script" path="res://scripts/collision_shape_2d.gd" id="13_uklam"]
+[ext_resource type="Texture2D" uid="uid://dgqw0jiidc1c0" path="res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_idea.png" id="12_vrub2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y4asn"]
 tile_data = PackedInt32Array(0, 196613, 1)
@@ -516,88 +515,88 @@ theme_override_font_sizes/font_size = 30
 text = "Configurações"
 metadata/_edit_use_anchors_ = true
 
-[node name="Challange01" type="Node2D" parent="."]
+[node name="Learn" type="Node2D" parent="."]
 position = Vector2(1140, 652)
 
-[node name="SpriteChallenge01" type="Sprite2D" parent="Challange01"]
-texture = ExtResource("10_45p1m")
+[node name="SpriteLearn" type="Sprite2D" parent="Learn"]
+texture = ExtResource("12_vrub2")
 
-[node name="ColisionChallange01" type="Area2D" parent="Challange01"]
+[node name="AreaLearn" type="Area2D" parent="Learn"]
 script = ExtResource("11_ufd6u")
+overlay_scene = "res://levels/learn.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange01/ColisionChallange01"]
+[node name="CollisionLearn" type="CollisionShape2D" parent="Learn/AreaLearn"]
 position = Vector2(-1, 9.5)
 shape = SubResource("RectangleShape2D_pp7j7")
 
 [node name="Challange03" type="Node2D" parent="."]
 position = Vector2(499, 323)
 
-[node name="SpriteChallenge01" type="Sprite2D" parent="Challange03"]
-texture = ExtResource("10_45p1m")
+[node name="SpriteChallenge03" type="Sprite2D" parent="Challange03"]
+texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange03" type="Area2D" parent="Challange03"]
 script = ExtResource("11_ufd6u")
+overlay_scene = "res://levels/challenge_3.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange03/ColisionChallange03"]
+[node name="CollisionChallange03" type="CollisionShape2D" parent="Challange03/ColisionChallange03"]
 position = Vector2(-1, 9.5)
 shape = SubResource("RectangleShape2D_pp7j7")
 
 [node name="Challange02" type="Node2D" parent="."]
 position = Vector2(692, 658)
 
-[node name="SpriteChallenge01" type="Sprite2D" parent="Challange02"]
-texture = ExtResource("10_45p1m")
+[node name="SpriteChallenge02" type="Sprite2D" parent="Challange02"]
+texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange02" type="Area2D" parent="Challange02"]
 script = ExtResource("11_ufd6u")
+overlay_scene = "res://levels/challenge_2.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange02/ColisionChallange02"]
+[node name="CollisionChallange02" type="CollisionShape2D" parent="Challange02/ColisionChallange02"]
 position = Vector2(-1, 9.5)
 shape = SubResource("RectangleShape2D_pp7j7")
 
 [node name="Challange04" type="Node2D" parent="."]
 position = Vector2(899, 177)
 
-[node name="SpriteChallenge01" type="Sprite2D" parent="Challange04"]
-texture = ExtResource("10_45p1m")
+[node name="SpriteChallenge04" type="Sprite2D" parent="Challange04"]
+texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange04" type="Area2D" parent="Challange04"]
 script = ExtResource("11_ufd6u")
+overlay_scene = "res://levels/challenge_4.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange04/ColisionChallange04"]
-position = Vector2(-1, 9.5)
+[node name="CollisionChallange04" type="CollisionShape2D" parent="Challange04/ColisionChallange04"]
+position = Vector2(0, 60)
 shape = SubResource("RectangleShape2D_pp7j7")
 
 [node name="Challange05" type="Node2D" parent="."]
 position = Vector2(1425, 469)
 
-[node name="SpriteChallenge01" type="Sprite2D" parent="Challange05"]
-texture = ExtResource("10_45p1m")
+[node name="SpriteChallenge05" type="Sprite2D" parent="Challange05"]
+texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange05" type="Area2D" parent="Challange05"]
 script = ExtResource("11_ufd6u")
+overlay_scene = "res://levels/challenge_5.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challange05/ColisionChallange05"]
+[node name="CollisionChallange05" type="CollisionShape2D" parent="Challange05/ColisionChallange05"]
 position = Vector2(-1, 9.5)
 shape = SubResource("RectangleShape2D_pp7j7")
 
-[node name="Learn" type="Node2D" parent="."]
+[node name="Challange01" type="Node2D" parent="."]
 position = Vector2(1364, 336)
 
-[node name="SpriteLearn" type="Sprite2D" parent="Learn"]
+[node name="SpriteChallange01" type="Sprite2D" parent="Challange01"]
 texture = ExtResource("12_ph3wi")
 
-[node name="AreaLearn" type="Area2D" parent="Learn"]
+[node name="CollisionChallange01" type="Area2D" parent="Challange01"]
 script = ExtResource("11_ufd6u")
+overlay_scene = "res://levels/challenge_1.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Learn/AreaLearn"]
+[node name="CollisionChallange01" type="CollisionShape2D" parent="Challange01/CollisionChallange01"]
 position = Vector2(-1, 9.5)
 shape = SubResource("RectangleShape2D_pp7j7")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(972, 285)
-script = ExtResource("13_uklam")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
 [connection signal="button_down" from="Settings" to="." method="_on_settings_button_down"]
