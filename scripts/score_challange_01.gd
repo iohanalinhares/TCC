@@ -7,6 +7,7 @@ var resposta_selecionada = 0
 var resposta_correta = 3
 var condition
 var query_result
+var score = 50
 
 var button_group = ButtonGroup.new()
 
@@ -40,11 +41,12 @@ func _on_save_pressed() -> void:
 
 func verificar_resposta(numero_resposta):
 	if numero_resposta == resposta_correta:
-		money = query_result[0].money + 10
+		money = query_result[0].money + score
 		
 		var update_data = {"money": money}
 		var update_result = database.update_rows("users", condition, update_data)
 		print("Resposta correta!")
 		database.close_db()
 	else:
+		score = score - 10
 		print("Resposta incorreta!")

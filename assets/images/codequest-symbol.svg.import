@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i34yo5k38itm"
-path="res://.godot/imported/money.png-bc8cd76aadecb8a413fa814b32c88ab9.ctex"
+uid="uid://dcjqxranunnu5"
+path="res://.godot/imported/codequest-symbol.svg-be12c95d8c5d6b767d918d7835a9d64c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/money.png"
-dest_files=["res://.godot/imported/money.png-bc8cd76aadecb8a413fa814b32c88ab9.ctex"]
+source_file="res://assets/images/codequest-symbol.svg"
+dest_files=["res://.godot/imported/codequest-symbol.svg-be12c95d8c5d6b767d918d7835a9d64c.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

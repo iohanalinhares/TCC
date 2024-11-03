@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i34yo5k38itm"
-path="res://.godot/imported/money.png-bc8cd76aadecb8a413fa814b32c88ab9.ctex"
+uid="uid://dj0ff1ahpuyn"
+path="res://.godot/imported/tips-hover.png-ad149888ec6fc7826694401cf5001242.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/money.png"
-dest_files=["res://.godot/imported/money.png-bc8cd76aadecb8a413fa814b32c88ab9.ctex"]
+source_file="res://assets/icons/tips-hover.png"
+dest_files=["res://.godot/imported/tips-hover.png-ad149888ec6fc7826694401cf5001242.ctex"]
 
 [params]
 

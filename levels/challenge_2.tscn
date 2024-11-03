@@ -6,7 +6,7 @@
 
 [node name="Challange" type="Node2D"]
 z_index = 5
-position = Vector2(475, 429)
+position = Vector2(460, 414)
 script = ExtResource("1_oheoe")
 
 [node name="ColorRect" type="ColorRect" parent="."]
