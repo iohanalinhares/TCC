@@ -23,3 +23,8 @@ func _ready():
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/settings.tscn")
 	pass
+
+
+func _on_texture_button_tips_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/buying_tips.tscn")
+	pass

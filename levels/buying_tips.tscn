@@ -1,26 +1,94 @@
-[gd_scene load_steps=5 format=3 uid="uid://blfmiohee4ula"]
+[gd_scene load_steps=32 format=3 uid="uid://blfmiohee4ula"]
 
 [ext_resource type="Texture2D" uid="uid://ic584jekht6h" path="res://assets/icons/ai-icon.png" id="1_jtgtq"]
+[ext_resource type="Script" path="res://scripts/buying_tips.gd" id="1_kcux1"]
+[ext_resource type="Texture2D" uid="uid://jq1hxv74rd8u" path="res://assets/images/background_lg.png" id="2_vv5x3"]
 [ext_resource type="Texture2D" uid="uid://d3xe1c2dgwxt1" path="res://assets/icons/lamp-icon.png" id="2_ymnbx"]
 [ext_resource type="Texture2D" uid="uid://ouwui4byowoh" path="res://assets/icons/cards-icon.png" id="3_txuhg"]
-[ext_resource type="Texture2D" uid="uid://c0jlxperee6bc" path="res://assets/icons/money.png" id="4_vdq2h"]
+[ext_resource type="Texture2D" uid="uid://i34yo5k38itm" path="res://assets/icons/money.png" id="4_vdq2h"]
+[ext_resource type="Texture2D" uid="uid://c0kjvxguv3g1o" path="res://assets/icons/combo.png" id="6_wdokd"]
+[ext_resource type="Texture2D" uid="uid://db62c45jptk2e" path="res://assets/icons/ai-3x.png" id="7_n20y8"]
+[ext_resource type="Texture2D" uid="uid://fy1egnpymd2h" path="res://assets/icons/lamp-3x.png" id="8_xdaeq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6jg6"]
+bg_color = Color(0.964706, 0.937255, 0.913725, 0.156863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5j5jr"]
+bg_color = Color(0.964706, 0.937255, 0.913725, 0.156863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tswj5"]
+bg_color = Color(0.678431, 0.752941, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2xc1"]
+bg_color = Color(0.180392, 0.34902, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhjvp"]
+bg_color = Color(0.211765, 0.521569, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvqad"]
+bg_color = Color(0.247059, 0.47451, 0.368627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8whk"]
+bg_color = Color(0.678431, 0.752941, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an3ia"]
+bg_color = Color(0.180392, 0.34902, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nj14"]
+bg_color = Color(0.247059, 0.47451, 0.368627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nyyi5"]
+bg_color = Color(0.678431, 0.752941, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18g6e"]
+bg_color = Color(0.180392, 0.34902, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqyry"]
+bg_color = Color(0.211765, 0.521569, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l24ir"]
+bg_color = Color(0.247059, 0.47451, 0.368627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hk0v"]
+bg_color = Color(0.678431, 0.752941, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kqw0"]
+bg_color = Color(0.180392, 0.34902, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qloe6"]
+bg_color = Color(0.211765, 0.521569, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x20hs"]
+bg_color = Color(0.678431, 0.752941, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jm0sw"]
+bg_color = Color(0.180392, 0.34902, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3pxn"]
+bg_color = Color(0.211765, 0.521569, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53si1"]
+bg_color = Color(0.678431, 0.752941, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gou1"]
+bg_color = Color(0.180392, 0.34902, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c01l1"]
+bg_color = Color(0.211765, 0.521569, 0.415686, 1)
 
 [node name="BuyingTips" type="Node2D"]
-metadata/_edit_vertical_guides_ = [500.0, 1420.0, 960.0, 600.0, 1320.0]
+script = ExtResource("1_kcux1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 3
-color = Color(0.027451, 0.0823529, 0.145098, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
 layout_mode = 0
-offset_left = 500.0
-offset_right = 1420.0
-offset_bottom = 1080.0
-size_flags_horizontal = 3
-color = Color(0.823529, 0.886275, 0.882353, 0.0392157)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_vv5x3")
 
 [node name="Title" type="HBoxContainer" parent="."]
 anchors_preset = 11
@@ -37,11 +105,12 @@ alignment = 1
 
 [node name="Title" type="Label" parent="Title"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.823529, 0.886275, 0.882353, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 theme_override_font_sizes/font_size = 50
 text = "Loja de dicas"
 
 [node name="Save" type="Button" parent="."]
+visible = false
 offset_left = 1059.0
 offset_top = 923.0
 offset_right = 1231.0
@@ -51,18 +120,20 @@ theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
 theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6jg6")
 text = "Salvar"
 
 [node name="Back" type="Button" parent="."]
-offset_left = 694.0
+offset_left = 874.0
 offset_top = 923.0
-offset_right = 866.0
+offset_right = 1046.0
 offset_bottom = 987.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
 theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5j5jr")
 text = "Voltar"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -80,6 +151,10 @@ offset_right = 180.0
 offset_bottom = 195.0
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_tswj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b2xc1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qhjvp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvqad")
 text = "$100"
 
 [node name="AI" type="TextureRect" parent="ColorRect2"]
@@ -105,6 +180,9 @@ offset_right = 180.0
 offset_bottom = 195.0
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_f8whk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_an3ia")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2nj14")
 text = "$100"
 
 [node name="Lamp" type="TextureRect" parent="ColorRect3"]
@@ -130,6 +208,10 @@ offset_right = 180.0
 offset_bottom = 195.0
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nyyi5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_18g6e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyry")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l24ir")
 text = "$100"
 
 [node name="Cards" type="TextureRect" parent="ColorRect4"]
@@ -140,9 +222,118 @@ offset_right = 134.0
 offset_bottom = 103.0
 texture = ExtResource("3_txuhg")
 
-[node name="Money" type="TextureRect" parent="."]
+[node name="MoneyIcon" type="TextureRect" parent="."]
 offset_left = 1347.0
 offset_top = 51.0
 offset_right = 1394.0
 offset_bottom = 98.0
 texture = ExtResource("4_vdq2h")
+
+[node name="Money" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = 1231.0
+offset_top = 55.0
+offset_right = 1331.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 2
+
+[node name="Combos" type="Label" parent="."]
+offset_left = 600.0
+offset_top = 536.0
+offset_right = 718.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Combos"
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 600.0
+offset_top = 609.0
+offset_right = 810.0
+offset_bottom = 819.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Button" type="Button" parent="ColorRect5"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 145.0
+offset_right = 180.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8hk0v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2kqw0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qloe6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvqad")
+text = "$100"
+
+[node name="Combo" type="TextureRect" parent="ColorRect5"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 175.0
+offset_bottom = 125.0
+texture = ExtResource("6_wdokd")
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 856.0
+offset_top = 609.0
+offset_right = 1066.0
+offset_bottom = 819.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Button" type="Button" parent="ColorRect6"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 145.0
+offset_right = 180.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_x20hs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jm0sw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k3pxn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvqad")
+text = "3x  $100"
+
+[node name="AI3x" type="TextureRect" parent="ColorRect6"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 51.0
+offset_right = 144.0
+offset_bottom = 110.0
+texture = ExtResource("7_n20y8")
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = 1110.0
+offset_top = 610.0
+offset_right = 1320.0
+offset_bottom = 820.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Button" type="Button" parent="ColorRect7"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 145.0
+offset_right = 180.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_53si1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1gou1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c01l1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvqad")
+text = "3x  $100"
+
+[node name="Lamp3x" type="TextureRect" parent="ColorRect7"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 37.0
+offset_right = 142.0
+offset_bottom = 113.0
+texture = ExtResource("8_xdaeq")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ColorRect2/Button" to="." method="_on_button_ai_pressed"]
