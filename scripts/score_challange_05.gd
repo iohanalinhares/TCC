@@ -18,6 +18,12 @@ func _ready() -> void:
 	
 	condition = "id = '" + str(user_id) + "'"
 	query_result = database.select_rows("users", condition, ["money"])
+	var challange_result = database.select_rows("challanges", condition, ["challange05"])
+	
+	if challange_result && challange_result[0].challange05 == "not_completed":
+		$ConcludedChallange.visible = false
+	else:
+		$ConcludedChallange.visible = true
 	
 	var button1 = $MarginContainer/VBoxContainer/Option_01
 	var button2 = $MarginContainer/VBoxContainer/Option_02
@@ -46,7 +52,27 @@ func verificar_resposta(numero_resposta):
 		var update_data = {"money": money}
 		var update_result = database.update_rows("users", condition, update_data)
 		print("Resposta correta!")
+		
+		var challange_completed = database.update_rows("challanges", condition, {"challange05": "completed"})
+		$ConcludedChallange.visible = true
+		$IncorrectAnswer.visible = false
 		database.close_db()
 	else:
 		score = score - 10
+		$IncorrectAnswer.visible = true
 		print("Resposta incorreta!")
+
+
+func _on_confirm_pressed() -> void:
+	queue_free()
+	pass
+
+
+func _on_back_pressed() -> void:
+	queue_free()
+	pass
+
+
+func _on_try_again_pressed() -> void:
+	$IncorrectAnswer.visible = false
+	pass

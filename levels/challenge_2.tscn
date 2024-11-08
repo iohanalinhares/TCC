@@ -1,8 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckxalxles05fh"]
+[gd_scene load_steps=12 format=3 uid="uid://ckxalxles05fh"]
 
 [ext_resource type="Script" path="res://scripts/score_challange_02.gd" id="1_oheoe"]
 [ext_resource type="Texture2D" uid="uid://ctxd0v28pjbav" path="res://assets/images/background.png" id="1_ukoty"]
 [ext_resource type="Texture2D" uid="uid://b2yq0i5hh44ge" path="res://assets/images/activities/activity_2.png" id="2_suocb"]
+[ext_resource type="Texture2D" uid="uid://cru2pdcaaqfo" path="res://assets/images/level_completed_styled.png" id="4_krnce"]
+[ext_resource type="Texture2D" uid="uid://0cy0n14lbwkx" path="res://assets/icons/star-completed.png" id="5_c0usr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rw4v"]
+bg_color = Color(0.678431, 0.752941, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6ndh"]
+bg_color = Color(0.180392, 0.34902, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olj3m"]
+bg_color = Color(0.964706, 0.937255, 0.913725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.180392, 0.34902, 0.270588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxnto"]
+bg_color = Color(0.878431, 0.772549, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gftn"]
+bg_color = Color(0.482353, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umfon"]
+bg_color = Color(0.964706, 0.937255, 0.913725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.482353, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Challange" type="Node2D"]
 z_index = 5
@@ -134,4 +172,131 @@ theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 text = "D - O código não funciona porque falta o ponto e vírgula."
 alignment = 0
 
+[node name="ConcludedChallange" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -414.0
+offset_right = 460.0
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Modal" type="ColorRect" parent="ConcludedChallange"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 216.0
+offset_right = 775.0
+offset_bottom = 521.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Star1" type="TextureRect" parent="ConcludedChallange"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 216.0
+offset_right = 775.0
+offset_bottom = 277.0
+texture = ExtResource("4_krnce")
+
+[node name="Star3" type="TextureRect" parent="ConcludedChallange"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 160.0
+offset_right = 500.0
+offset_bottom = 240.0
+texture = ExtResource("5_c0usr")
+
+[node name="Label" type="Label" parent="ConcludedChallange"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 323.0
+offset_right = 775.0
+offset_bottom = 372.0
+theme_override_colors/font_color = Color(0.180392, 0.34902, 0.270588, 1)
+theme_override_font_sizes/font_size = 35
+text = "Desafio concluído"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Confirm" type="Button" parent="ConcludedChallange"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 416.0
+offset_right = 530.0
+offset_bottom = 466.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.180392, 0.34902, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(0.678431, 0.752941, 0.694118, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.34902, 0.270588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.34902, 0.270588, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_8rw4v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t6ndh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_olj3m")
+text = "OK"
+
+[node name="IncorrectAnswer" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -414.0
+offset_right = 460.0
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Modal" type="ColorRect" parent="IncorrectAnswer"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 237.0
+offset_right = 776.0
+offset_bottom = 542.0
+color = Color(0.964706, 0.937255, 0.913725, 1)
+
+[node name="Label" type="Label" parent="IncorrectAnswer"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 323.0
+offset_right = 775.0
+offset_bottom = 372.0
+theme_override_colors/font_color = Color(0.482353, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "resposta incorreta"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TryAgain" type="Button" parent="IncorrectAnswer"]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 415.0
+offset_right = 561.0
+offset_bottom = 465.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.482353, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_colors/font_focus_color = Color(0.482353, 0, 0, 1)
+theme_override_colors/font_color = Color(0.482353, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_xxnto")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3gftn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_umfon")
+text = "Tentar novamente"
+
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ConcludedChallange/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="IncorrectAnswer/TryAgain" to="." method="_on_try_again_pressed"]

@@ -17,6 +17,22 @@ func _ready():
 		money.text = str(query_result[0].money)
 	else:
 		money.text = "0"
+		
+	# VERIFICAÇÃO DO USUÁRIO NA TABLE CHALLANGES
+	var insert_table = """
+		INSERT INTO challanges (id, level, challange01, challange02, challange03, challange04, challange05)
+		VALUES(?, ?, ?, ?, ?, ?, ?)
+	"""
+	
+	var user_tips = database.select_rows("challanges", condition, ["id"])
+	
+	# VERIFICA SE O USUÁRIO EXISTE NA TABLE OU SE É PRECISO CRIAR UM ITEM DELE
+	if user_tips:
+		print('usuário existe')
+	else:
+		var values = [user_id, 1, "not_completed", "not_completed", "not_completed", "not_completed", "not_completed"]
+		user_tips = database.query_with_bindings(insert_table, values)
+		print('usuário adicionado')
 	pass
 	
 
