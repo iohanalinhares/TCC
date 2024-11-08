@@ -155,7 +155,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_tswj5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_b2xc1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qhjvp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cvqad")
-text = "$80"
+text = "$100"
 
 [node name="AI" type="TextureRect" parent="ColorRect2"]
 layout_mode = 0
@@ -183,7 +183,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/disabled = SubResource("StyleBoxFlat_f8whk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_an3ia")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2nj14")
-text = "$40"
+text = "$100"
 
 [node name="Lamp" type="TextureRect" parent="ColorRect3"]
 layout_mode = 0
@@ -212,7 +212,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_nyyi5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_18g6e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyry")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l24ir")
-text = "$20"
+text = "$100"
 
 [node name="Cards" type="TextureRect" parent="ColorRect4"]
 layout_mode = 0
@@ -267,7 +267,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_8hk0v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2kqw0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qloe6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cvqad")
-text = "$120"
+text = "$100"
 
 [node name="Combo" type="TextureRect" parent="ColorRect5"]
 layout_mode = 0
@@ -296,7 +296,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_x20hs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jm0sw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_k3pxn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cvqad")
-text = "3x  $220"
+text = "3x  $100"
 
 [node name="AI3x" type="TextureRect" parent="ColorRect6"]
 layout_mode = 0
