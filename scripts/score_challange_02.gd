@@ -77,3 +77,28 @@ func _on_confirm_pressed() -> void:
 func _on_try_again_pressed() -> void:
 	$IncorrectAnswer.visible = false
 	pass
+
+
+func _on_help_pressed() -> void:
+	var request = "Sem me dar a respostga correta, me dê uma dica sobre a resposta correta:
+		O que será exibido no console ao rodar o código abaixo?
+		let idade = 17;
+		if (idade >= 18) {
+		  console.log('Você pode votar.');
+		} else {
+		  console.log('Você ainda não pode votar.');
+		}
+		A) Você pode votar.
+		B) Você ainda não pode votar.
+		C) undefined
+		D) O código não funciona porque falta o ponto e vírgula.
+	"
+	
+	GeminiRequest.make_gemini_request(request)
+	pass
+	
+
+
+func _on_ok_pressed() -> void:
+	$AIResponse.visible = false
+	pass

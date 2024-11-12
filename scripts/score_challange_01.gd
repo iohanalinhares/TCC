@@ -92,3 +92,25 @@ func _on_confirm_pressed() -> void:
 func _on_try_again_pressed() -> void:
 	$IncorrectAnswer.visible = false
 	pass
+
+
+func _on_help_pressed() -> void:
+	var request = "Sem me dar a respostga correta, me dê uma dica sobre a resposta correta:
+		1.	Qual será o resultado do seguinte código?
+		let a = 10;
+		let b = 20;
+		let resultado = a + b;
+		console.log(resultado);
+		A) 10
+		B) 20
+		C) 30
+		D) undefined
+	"
+	
+	GeminiRequest.make_gemini_request(request)
+	pass
+
+
+func _on_ok_pressed() -> void:
+	$AIResponse.visible = false
+	pass

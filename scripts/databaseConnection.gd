@@ -44,3 +44,7 @@ func _on_texture_button_pressed() -> void:
 func _on_texture_button_tips_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/buying_tips.tscn")
 	pass
+	
+
+func alter_star() -> void:
+	pass

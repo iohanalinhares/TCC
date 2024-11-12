@@ -8,6 +8,7 @@ var resposta_correta = 3
 var condition
 var query_result
 var score = 50
+var AIReturn
 
 var button_group = ButtonGroup.new()
 
@@ -75,4 +76,29 @@ func _on_back_pressed() -> void:
 
 func _on_try_again_pressed() -> void:
 	$IncorrectAnswer.visible = false
+	pass
+
+
+func _on_help_pressed() -> void:
+	var request = "Sem me dar a respostga correta, me dê uma dica sobre a resposta correta:
+		5. O que acontece ao rodar o seguinte código?
+		let nome = 'Maria';
+		const idade = 25;
+		nome = 'Ana';
+		idade = 30;
+		console.log(nome, idade);
+		A) Ana 30
+		B) Maria 25
+		C) O código exibe um erro, pois const não permite a reatribuição de valores.
+		D) Ana 25
+	"
+	
+	AIReturn = GeminiRequest.make_gemini_request(request)
+	
+	$AIResponse/Introdution/VBoxContainer/AIReturn.text = AIReturn
+	pass
+
+
+func _on_ok_pressed() -> void:
+	$AIResponse.visible = false
 	pass

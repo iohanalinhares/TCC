@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global.gd"
 WindowManager="*res://scripts/windowManager.gd"
+GeminiRequest="*res://scripts/http_request.gd"
 
 [display]
 

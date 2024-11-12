@@ -76,3 +76,21 @@ func _on_confirm_pressed() -> void:
 func _on_try_again_pressed() -> void:
 	$IncorrectAnswer.visible = false
 	pass
+
+
+func _on_help_pressed() -> void:
+	var request = "Sem me dar a respostga correta, me dê uma dica sobre a resposta correta:
+		3. Qual das alternativas abaixo é uma forma correta de declarar uma função em JavaScript?
+		A) function somar(a, b) { return a + b; }
+		B) function: somar(a, b) => { return a + b; }
+		C) let somar = function(a, b) => { return a + b; }
+		D) somar(a, b) = { return a + b; }
+	"
+	
+	GeminiRequest.make_gemini_request(request)
+	pass
+
+
+func _on_ok_pressed() -> void:
+	$AIResponse.visible = false
+	pass
