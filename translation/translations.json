@@ -1,0 +1,228 @@
+{
+	"english": {
+		"username": "Username",
+		"password": "Password",
+		"dontHaveAccount": "Don't have an account?",
+		"register": "Register",
+		"record": "Record",
+		"confirmPassword": "Confirm your password",
+		"language": "Language",
+		"haveAccount": "Already have an account?",
+		"goToLogin": "Log in",
+		"level": "Level",
+		"configuration": "Settings",
+		"sounds": "Sounds",
+		"music": "Music",
+		"tipsStore": "Tips Store",
+		"combos": "Combos",
+		"confirmPurchase": "Confirm purchase of",
+		"getTip": "Get tip",
+		"getAI": "Get AI response",
+		"getCards": "Eliminate alternatives",
+		"incorrectAnswer": "Incorrect answer",
+		"challangeCompleted": "Challenge completed",
+		"tips": {
+			"ai": "AI response",
+			"tip": "tip",
+			"cards": "tip eliminating alternatives",
+			"comboAll": "combo with all helps",
+			"comboAi": "AI responses",
+			"comboTips": "tips"
+		},
+		"buttons": {
+			"back": "Back",
+			"save": "Save",
+			"toRegister": "Register",
+			"enter": "Enter",
+			"cancel": "Cancel",
+			"confirm": "Confirm",
+			"leave": "Exit",
+			"next": "Next",
+			"previous": "Previous",
+			"conclude": "Conclude",
+			"send": "Send",
+			"tryAgain": "Try again",
+			"ok": "OK"
+		},
+		"errorMessages": {
+			"requiredField": "This field is required!",
+			"incorrectUserOrPassword": "Incorrect username or password!",
+			"userAlreadyExists": "The user is already registered!"
+		},
+		"challanges": {
+			"challange01": {
+				"title": "Challenge 01",
+				"question": "1. What will be the result of the following code?"
+			},
+			"challange02": {
+				"title": "Challenge 02",
+				"question": "2. What will be displayed in the console when running\nthe code below?",
+				"alternativeA": "A - You can vote.",
+				"alternativeB": "B - You cannot vote yet.",
+				"alternativeD": "D - The code doesn't work because a semicolon is missing."
+			},
+			"challange03": {
+				"title": "Challenge 03",
+				"question": "3. Which of the following is a correct way to declare a\nfunction in JavaScript?"
+			},
+			"challange04": {
+				"title": "Challenge 04",
+				"question": "4. What is the output of the following code in the console?"
+			},
+			"challange05": {
+				"title": "Challenge 05",
+				"question": "5. What happens when running the following code?",
+				"alternativeC": "C - The code throws an error because const does not allow value reassignment"
+			}
+		},
+		"learn": {
+			"topic01": {
+				"title": "Introduction",
+				"text": "JavaScript is a programming language primarily used to add interactivity to web pages. It runs directly in the browser, enabling the creation of dynamic elements like animations, form validation, and much more. To start using JavaScript, simply insert the code inside the <script> tag in an HTML file, either directly in the header, page body, or an external file.\n\nExample of including a script:"
+			},
+			"topic02": {
+				"title": "Variables and Data Types",
+				"text": "Variables are used to store data that can be reused or manipulated during program execution. In JavaScript, we can declare variables with var (less recommended today), let (a value that can change), and const (a constant value that cannot be changed). The main data types are:\n• String: Character strings, like 'Hello, world!'.\n• Number: Numbers, like 42 or 3.14.\n• Boolean: True or false.\n• Undefined: A variable declared but not assigned a value.\n• Null: A value explicitly defined as empty."
+			},
+			"topic03": {
+				"title": "Operators",
+				"text": "Operators allow you to perform calculations, compare values, or carry out logical operations. Some commonly used operators are:\n\n• Arithmetic: + (addition), - (subtraction), * (multiplication), / (division), % (modulo).\n\n• Comparison: == (equal), === (strictly equal), != (not equal), >, <, >=, <=.\n\n• Logical: && (AND), || (OR), ! (NOT).\n\nExample of comparison:"
+			},
+			"topic04": {
+				"title": "Conditional Structures",
+				"text": "Conditional structures are used to make decisions in the code based on a logical condition. They allow different blocks of code to be executed depending on whether a condition is true or false. The primary use of the conditional structure in JavaScript is if, accompanied by else and else if for handling multiple conditions.",
+				"text2": "In this case, the code checks the grade and, depending on the condition, displays a corresponding message. The order of the conditions is important because JavaScript executes the first one that is true."
+			},
+			"topic05": {
+				"title": "Loops",
+				"text": "Loop structures are used to execute a block of code repeatedly until a condition is satisfied. There are different types of loops in JavaScript:",
+				"titleFor": "FOR",
+				"textFor": "The for loop is used when the number of iterations is known. It is divided into three parts: initialization, condition, and increment.\n\nFor syntax:",
+				"textForComplement": "Here, the loop starts with i = 0 and continues as long as i is less than 5, incrementing i by 1 each iteration. The code inside the loop will execute 5 times, displaying values from 0 to 4 in the console.\n",
+				"titleWhile": "WHILE",
+				"textWhile": "The while loop is used when the number of iterations is not known beforehand. It continues executing the block of code while the condition is true.\n\nWhile syntax:",
+				"textWhileComplement": "In this example, the loop will execute while counter is less than 3. Each iteration increments counter by 1, and the value is displayed in the console.",
+				"titleDoWhile": "DO WHILE",
+				"textDoWhile": "The do-while loop is similar to the while loop but guarantees the block of code will execute at least once, regardless of the condition.\n\nDo-while syntax:",
+				"textDoWhileComplement": "Here, the code executes first, and only then is the condition checked. Even if i were already greater than 3 at the start, the first execution would still happen."
+			},
+			"topic06": {
+				"title": "Functions",
+				"text": "Functions are reusable blocks of code that can be called to perform a specific task. They can accept parameters and return a value. The traditional function is defined using the function keyword.\n\nExample of a traditional function:"
+			}
+		}
+	},
+	"portuguese": {
+		"username": "Nome de usuário",
+		"password": "Senha",
+		"dontHaveAccount": "Ainda não tem uma conta?",
+		"register": "Cadastre-se",
+		"record": "Cadastro",
+		"confirmPassword": "Confirme sua senha",
+		"language": "Idioma",
+		"haveAccount": "Já possui uma conta?",
+		"goToLogin": "Faça login",
+		"level": "Nível",
+		"configuration": "Configurações",
+		"sounds": "Sons",
+		"music": "Música",
+		"tipsStore": "Loja de dicas",
+		"combos": "Combos",
+		"confirmPurchase": "Confirmar compra de",
+		"getTip": "Obter dica",
+		"getAI": "Obter resposta de IA",
+		"getCards": "Eliminar alternativas",
+		"incorrectAnswer": "Resposta incorreta",
+		"challangeCompleted": "Desafio concluído",
+		"tips": {
+			"ai": "1 resposta de IA",
+			"tip": "1 dica",
+			"cards": "1 dica eliminando alternativas",
+			"comboAll": "Combo com todas as ajudas",
+			"comboAi": "3 respostas de IA", 
+			"comboTips": "3 dicas"
+		},
+		"buttons": {
+			"back": "Voltar",
+			"save": "Salvar",
+			"toRegister": "Cadastrar",
+			"enter": "Entrar",
+			"cancel": "Cancelar",
+			"confirm": "Confirmar",
+			"leave": "Sair",
+			"next": "Próximo",
+			"previous": "Anterior",
+			"conclude": "Concluir",
+			"send": "Enviar",
+			"tryAgain": "Tentar novamente",
+			"ok": "OK"
+		},
+		"errorMessages": {
+			"requiredField": "Este campo é obrigatório!",
+			"incorrectUserOrPassword": "Usuário ou senha incorretos!",
+			"userAlreadyExists": "O usuário já está cadastrado!"
+		},
+		"challanges": {
+			"challange01": {
+				"title": "Desafio 01",
+				"question": "1. Qual será o resultado do seguinte código?"
+			},
+			"challange02": {
+				"title": "Desafio 02",
+				"question": "2. O que será exibido no console ao rodar o código abaixo?",
+				"alternativeA": "A - Você pode votar.",
+				"alternativeB": "B - Você ainda não pode votar.",
+				"alternativeD": "D - O código não funciona porque falta o ponto e vírgula."
+			},
+			"challange03": {
+				"title": "Desafio 03",
+				"question": "3. Qual das alternativas abaixo é uma forma correta de\ndeclarar uma função em JavaScript?"
+			},
+			"challange04": {
+				"title": "Desafio 04",
+				"question": "4. Qual é a saída do código abaixo no console?"
+			},
+			"challange05": {
+				"title": "Desafio 05",
+				"question": "5. O que acontece ao rodar o seguinte código?",
+				"alternativeC": "C - O código exibe um erro, pois const não permite a reatribuição de valores"
+			}
+		},
+		"learn": {
+			"topic01": {
+				"title": "Introdução",
+				"text": "JavaScript é uma linguagem de programação usada principalmente para adicionar interatividade a páginas da web. Ele é executado diretamente no navegador, permitindo a criação de elementos dinâmicos como animações, validação de formulários, e muito mais. Para começar a usar JavaScript, basta inserir o código dentro da tag <script> em um arquivo HTML, seja diretamente no cabeçalho, corpo da página, ou em um arquivo externo.\n\nExemplo de como incluir um script:"
+			},
+			"topic02": {
+				"title": "Variáveis e tipos de dados",
+				"text": "Variáveis são usadas para armazenar dados que podem ser reutilizados ou manipulados durante a execução de um programa. Em JavaScript, podemos declarar variáveis com var (menos recomendada hoje), let (valor que pode mudar) e const (valor constante que não pode ser alterado). Os principais tipos de dados são:\n•    String: Cadeias de caracteres, como 'Olá, mundo!'.\n•    Number: Números, como 42 ou 3.14.\n•    Boolean: Verdadeiro ou falso (true ou false).\n•    Undefined: Variável que foi declarada mas não recebeu valor.\n•    Null: Um valor explicitamente definido como vazio."
+			},
+			"topic03": {
+				"title": "Operadores",
+				"text": "Operadores permitem realizar cálculos, comparar valores, ou realizar operações lógicas. Alguns dos operadores mais usados são:\n\n•    Aritméticos: + (adição), - (subtração), * (multiplicação), / (divisão), % (resto da divisão).\n\n•    Comparação: == (igual), === (estritamente igual), != (diferente), >, <, >=, <=.\n\n•    Lógicos: && (E), || (OU), ! (NÃO).\n\nExemplo de comparação:"
+			},
+			"topic04": {
+				"title": "Estrutura Condicional",
+				"text": "A estrutura condicional é usada para tomar decisões no código com base em uma condição lógica. Ela permite que diferentes blocos de código sejam executados dependendo se uma condição for verdadeira ou falsa. O principal uso da estrutura condicional em JavaScript é o if, acompanhado do else e else if para lidar com múltiplas condições.",
+				"text2": "Neste caso, o código verifica a nota e, dependendo da condição, exibe uma mensagem correspondente. A ordem das condições é importante, pois o JavaScript executa a primeira que for verdadeira."
+			},
+			"topic05": {
+				"title": "Estrutura de Repetição",
+				"text": "As estruturas de repetição (loops) são usadas para executar um bloco de código várias vezes, até que uma condição seja satisfeita. Existem diferentes tipos de loops em JavaScript:",
+				"titleFor": "FOR",
+				"textFor": "O for é uma estrutura de repetição usada quando sabemos quantas vezes o loop deve ser executado. Ele é dividido em três partes: inicialização, condição e incremento.\n\nSintaxe do for:",
+				"textForComplement": "Aqui, o loop começa com i = 0 e continua enquanto i for menor que 5, incrementando i em 1 a cada iteração. O código dentro do loop será executado 5 vezes, exibindo os valores de 0 a 4 no console.\n",
+				"titleWhile": "WHILE",
+				"textWhile": "O while é usado quando a quantidade de repetições não é conhecida previamente. Ele continua a executar o bloco de código enquanto a condição for verdadeira.\n\nSintaxe do while:",
+				"textWhileComplement": "Nesse exemplo, o loop será executado enquanto contador for menor que 3. A cada iteração, contador é incrementado em 1, e o valor é exibido no console.",
+				"titleDoWhile": "DO WHILE",
+				"textDoWhile": "O do while é similar ao while, mas garante que o bloco de código seja executado ao menos uma vez, independentemente da condição.\n\nSintaxe do do while:",
+				"textDoWhileComplement": "Aqui, o código será executado primeiro, e só depois a condição será verificada. Mesmo que i já fosse maior que 3 no início, a primeira execução aconteceria."
+			},
+			"topic06": {
+				"title": "Funções",
+				"text": "Funções são blocos de código reutilizáveis que podem ser chamados para realizar uma tarefa específica. Elas podem receber parâmetros e retornar um valor. A função tradicional é definida com a palavra-chave function.\n\nExemplo de função tradicional:"
+			}
+		}
+	}
+}

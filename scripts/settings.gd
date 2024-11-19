@@ -1,6 +1,8 @@
 extends Node2D
 
 var database = SQLite
+var translator
+
 func _ready() -> void:
 	database = SQLite.new()
 	database.path = "res://database/database.db"
@@ -16,6 +18,19 @@ func _ready() -> void:
 	
 	languege.text = query_result[0].language
 	username.text = query_result[0].username
+	
+	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
+	translator = preload("res://scripts/translation.gd").new()
+	translator.load_translations()
+	translator.set_language(query_result[0].language)
+	
+	$Title/title.text = translator.get_translation("configuration")
+	$Sons/CheckButton.text = translator.get_translation("sounds") + ": "
+	$Music/CheckButton.text = translator.get_translation("music") + ": "
+	$Language/languege.text = translator.get_translation("language") + ": "
+	$Username/username.text = translator.get_translation("username") + ": "
+	$Save.text = translator.get_translation("buttons.save")
+	$Back.text = translator.get_translation("buttons.back")
 	pass
 
 func _on_back_button_down() -> void:

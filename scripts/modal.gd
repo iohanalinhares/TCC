@@ -9,20 +9,28 @@ var database = SQLite
 var tips_result
 var condition
 var typeButtonPressed
+var translator
 
 func _ready():
 	database = SQLite.new()
 	database.path = "res://database/database.db"
 	database.open_db()
 	
-	#var user_id = Global.user_id
-	var user_id = 11
+	var user_id = Global.user_id
 	
 	condition = "id = '" + str(user_id) + "'"
-	
 	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
-	
+	var query_result = database.select_rows("users", condition, ["language"])
 	cancel_button.pressed.connect(_on_cancel_pressed)
+	
+	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
+	translator = preload("res://scripts/translation.gd").new()
+	translator.load_translations()
+	translator.set_language(query_result[0].language)
+	
+	$Title.text = translator.get_translation("confirmPurchase") + ": "
+	$Cancel.text = translator.get_translation("buttons.cancel")
+	$Confirm.text = translator.get_translation("buttons.confirm")
 
 func set_title(title_text: String):
 	if label:

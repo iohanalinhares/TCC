@@ -19,12 +19,60 @@ extends Node2D
 
 var sections: Array[ScrollContainer] = []
 var buttons: Array[Button] = []
+var translator
+
+var database = SQLite
 
 func _ready() -> void:
 	sections = [introdution, variables, operators, conditional_structure, loop_structure, functions]
 	buttons = [step_1, step_2, step_3, step_4, step_5, step_6]
 	_change_button_color(0)
 	_update_navigation_buttons()
+	
+	database = SQLite.new()
+	database.path = "res://database/database.db"
+	database.open_db()
+	var user_id = Global.user_id
+	
+	var condition = "id = '" + str(user_id) + "'"
+	var query_result = database.select_rows("users", condition, ["money, language"])
+	
+	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
+	translator = preload("res://scripts/translation.gd").new()
+	translator.load_translations()
+	translator.set_language(query_result[0].language)
+	
+	$Introdution/VBoxContainer/title.text = translator.get_translation("learn.topic01.title")
+	$Introdution/VBoxContainer/content.text = translator.get_translation("learn.topic01.text")
+	
+	$Variables/VBoxContainer/title.text = translator.get_translation("learn.topic02.title")
+	$Variables/VBoxContainer/content.text = translator.get_translation("learn.topic02.text")
+	
+	$Operators/VBoxContainer/title.text = translator.get_translation("learn.topic03.title")
+	$Operators/VBoxContainer/content.text = translator.get_translation("learn.topic03.text")
+	
+	$ConditionalStructure/VBoxContainer/title.text = translator.get_translation("learn.topic04.title")
+	$ConditionalStructure/VBoxContainer/content.text = translator.get_translation("learn.topic04.text")
+	$ConditionalStructure/VBoxContainer/content2.text = translator.get_translation("learn.topic04.text2")
+	
+	$LoopStructure/VBoxContainer/title.text = translator.get_translation("learn.topic05.title")
+	$LoopStructure/VBoxContainer/content.text = translator.get_translation("learn.topic05.text")
+	$LoopStructure/VBoxContainer/titleFor.text = translator.get_translation("learn.topic05.titleFor")
+	$LoopStructure/VBoxContainer/contentFor.text = translator.get_translation("learn.topic05.textFor")
+	$LoopStructure/VBoxContainer/contentForComplement.text = translator.get_translation("learn.topic05.textForComplement")
+	$LoopStructure/VBoxContainer/titleWhile.text = translator.get_translation("learn.topic05.titleWhile")
+	$LoopStructure/VBoxContainer/contentWhile.text = translator.get_translation("learn.topic05.textWhile")
+	$LoopStructure/VBoxContainer/contentWhileComplement.text = translator.get_translation("learn.topic05.textWhileComplement")
+	$LoopStructure/VBoxContainer/titleDoWhile.text = translator.get_translation("learn.topic05.titleDoWhile")
+	$LoopStructure/VBoxContainer/contentDoWhile.text = translator.get_translation("learn.topic05.textDoWhile")
+	$LoopStructure/VBoxContainer/contentDoWhileComplement.text = translator.get_translation("learn.topic05.textDoWhileComplement")
+	
+	$Functions/VBoxContainer/title.text = translator.get_translation("learn.topic06.title")
+	$Functions/VBoxContainer/content.text = translator.get_translation("learn.topic06.text")
+	
+	$Exit.text = translator.get_translation("buttons.leave")
+	$Next.text = translator.get_translation("buttons.next")
+	$Previous.text = translator.get_translation("buttons.previous")
 
 func _on_step_1_pressed() -> void:
 	_hide_all_sections()

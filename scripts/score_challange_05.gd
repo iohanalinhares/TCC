@@ -2,7 +2,6 @@ extends Node2D
 
 var database = SQLite
 var money = 0
-var user_id = 11
 var resposta_selecionada = 0
 var resposta_correta = 3
 var condition
@@ -10,6 +9,7 @@ var query_result
 var score = 50
 var AIReturn
 var tips_result
+var translator
 
 var button_group = ButtonGroup.new()
 
@@ -18,10 +18,22 @@ func _ready() -> void:
 	database.path = "res://database/database.db"
 	database.open_db()
 	
+	var user_id = Global.user_id
 	condition = "id = '" + str(user_id) + "'"
-	query_result = database.select_rows("users", condition, ["money"])
+	query_result = database.select_rows("users", condition, ["money, language"])
 	var challange_result = database.select_rows("challanges", condition, ["challange05"])
 	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
+	
+	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
+	translator = preload("res://scripts/translation.gd").new()
+	translator.load_translations()
+	translator.set_language(query_result[0].language)
+	
+	$Title/title.text = translator.get_translation("challanges.challange05.title")
+	$MarginContainer/VBoxContainer/Label.text = translator.get_translation("challanges.challange05.question")
+	$MarginContainer/VBoxContainer/Option_03.text = translator.get_translation("challanges.challange05.alternativeC")
+	$Save.text = translator.get_translation("buttons.save")
+	$Back.text = translator.get_translation("buttons.back")
 	
 	if challange_result && challange_result[0].challange05 == "not_completed":
 		$ConcludedChallange.visible = false

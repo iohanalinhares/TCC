@@ -1,6 +1,7 @@
 extends Node2D
 
 var database = SQLite
+var translator
 
 func _ready():
 	database = SQLite.new()
@@ -11,7 +12,7 @@ func _ready():
 	
 	var condition = "id = '" + str(user_id) + "'"
 	
-	var query_result = database.select_rows("users", condition, ["money"])
+	var query_result = database.select_rows("users", condition, ["money, language"])
 	var money = $"Money"
 	if query_result:
 		money.text = str(query_result[0].money)
