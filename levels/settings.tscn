@@ -99,8 +99,19 @@ theme_override_font_sizes/font_size = 30
 text = "Idioma: "
 
 [node name="selected-language" type="Label" parent="Language"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+
+[node name="OptionButton" type="OptionButton" parent="Language"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+item_count = 2
+popup/item_0/text = "Português"
+popup/item_0/id = 1
+popup/item_1/text = "English"
+popup/item_1/id = 2
 
 [node name="Username" type="HBoxContainer" parent="."]
 offset_left = 600.0

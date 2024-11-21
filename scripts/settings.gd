@@ -2,6 +2,9 @@ extends Node2D
 
 var database = SQLite
 var translator
+var language
+var query_result
+var condition
 
 func _ready() -> void:
 	database = SQLite.new()
@@ -10,14 +13,20 @@ func _ready() -> void:
 	
 	var user_id = Global.user_id
 	
-	var condition = "id = '" + str(user_id) + "'"
-	var query_result = database.select_rows("users", condition, ["id, username, sounds, music, language"])
+	condition = "id = '" + str(user_id) + "'"
+	query_result = database.select_rows("users", condition, ["id, username, sounds, music, language"])
 	
 	var languege = $"Language/selected-language"
 	var username = $"Username/selected-username"
 	
 	languege.text = query_result[0].language
 	username.text = query_result[0].username
+	
+	if query_result[0].language:
+		if query_result[0].language == 'portuguese':
+			$"Language/OptionButton".select(0)
+		else:
+			$"Language/OptionButton".select(1)
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
 	translator = preload("res://scripts/translation.gd").new()
@@ -38,6 +47,18 @@ func _on_back_button_down() -> void:
 	pass
 
 func _on_save_button_down() -> void:
+	var updatedLanguage
+	if $"Language/OptionButton".get_selected_id():
+		if $"Language/OptionButton".get_selected_id() == 1:
+			updatedLanguage = 'portuguese'
+		else:
+			updatedLanguage = 'english'
+	var update_data = {"language": updatedLanguage}
+	var update_result = database.update_rows("users", condition, update_data)
+	
+	if update_result:
+		get_tree().change_scene_to_file("res://levels/world_01.tscn")
+		
 	pass
 
 

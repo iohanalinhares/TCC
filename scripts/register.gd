@@ -70,7 +70,6 @@ func _on_register_button_button_down() -> void:
 		else:
 			language = 'english'
 		
-	print("idioma: ", language)
 	var data = {
 		"username": $"Username/input-name".text,
 		"password": hashed_password,
