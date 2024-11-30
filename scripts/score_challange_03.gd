@@ -33,6 +33,13 @@ func _ready() -> void:
 	$Save.text = translator.get_translation("buttons.save")
 	$Back.text = translator.get_translation("buttons.back")
 	
+	$IncorrectAnswer/Label.text = translator.get_translation("incorrectAnswer")
+	$IncorrectAnswer/TryAgain.text = translator.get_translation("buttons.tryAgain")
+	
+	$ConcludedChallange/Label.text = translator.get_translation("challangeCompleted")
+	
+	$AIResponse/Introdution/VBoxContainer/AIReturn.text = translator.get_translation("loading")
+	
 	if challange_result && challange_result[0].challange03 == "not_completed":
 		$ConcludedChallange.visible = false
 	else:

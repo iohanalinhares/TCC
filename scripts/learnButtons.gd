@@ -27,7 +27,6 @@ func _ready() -> void:
 	sections = [introdution, variables, operators, conditional_structure, loop_structure, functions]
 	buttons = [step_1, step_2, step_3, step_4, step_5, step_6]
 	_change_button_color(0)
-	_update_navigation_buttons()
 	
 	database = SQLite.new()
 	database.path = "res://database/database.db"
@@ -73,6 +72,8 @@ func _ready() -> void:
 	$Exit.text = translator.get_translation("buttons.leave")
 	$Next.text = translator.get_translation("buttons.next")
 	$Previous.text = translator.get_translation("buttons.previous")
+	
+	_update_navigation_buttons()
 
 func _on_step_1_pressed() -> void:
 	_hide_all_sections()
@@ -126,7 +127,9 @@ func _on_step_6_pressed() -> void:
 func _on_next_pressed() -> void:	
 	for i in range(sections.size()):
 		if sections[i].visible:
-			if i < sections.size() - 1:
+			if i == sections.size() - 1:
+				queue_free()
+			else:
 				sections[i].visible = false
 				sections[i + 1].visible = true
 				_change_button_color(i + 1)
@@ -163,8 +166,13 @@ func _update_navigation_buttons() -> void:
 	for i in range(sections.size()):
 		if sections[i].visible:
 			if i == sections.size() - 1:
-				next.text = "Concluir"
+				next.text = translator.get_translation("buttons.conclude")
 			else:
-				next.text = "Next"
+				next.text = translator.get_translation("buttons.next")
 			previous.visible = i > 0
 			break
+
+
+func _on_exit_pressed() -> void:
+	queue_free()
+	pass

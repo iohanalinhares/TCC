@@ -421,6 +421,7 @@ layout_mode = 2
 texture = ExtResource("8_ry63b")
 stretch_mode = 3
 
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="HBoxContainer/Step1" to="." method="_on_step_1_pressed"]

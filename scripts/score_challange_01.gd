@@ -33,6 +33,13 @@ func _ready() -> void:
 	$MarginContainer/VBoxContainer/Label.text = translator.get_translation("challanges.challange01.question")
 	$Save.text = translator.get_translation("buttons.save")
 	$Back.text = translator.get_translation("buttons.back")
+	
+	$IncorrectAnswer/Label.text = translator.get_translation("incorrectAnswer")
+	$IncorrectAnswer/TryAgain.text = translator.get_translation("buttons.tryAgain")
+	
+	$ConcludedChallange/Label.text = translator.get_translation("challangeCompleted")
+	
+	$AIResponse/Introdution/VBoxContainer/AIReturn.text = translator.get_translation("loading")
 
 	if challange_result && challange_result[0].challange01 == "not_completed":
 		$ConcludedChallange.visible = false
@@ -124,7 +131,7 @@ func _on_try_again_pressed() -> void:
 
 
 func _on_help_pressed() -> void:
-	$AIResponse/Introdution/VBoxContainer/AIReturn.text = "Carregando..."
+	$AIResponse/Introdution/VBoxContainer/AIReturn.text = translator.get_translation("loading")
 	
 	var request = "Sem me dar a respostga correta, me dê uma dica sobre a resposta correta:
 		1.	Qual será o resultado do seguinte código?
@@ -153,7 +160,7 @@ func _on_ok_pressed() -> void:
 
 
 func _on_ai_pressed() -> void:
-	$AIResponse/Introdution/VBoxContainer/AIReturn.text = "Carregando..."
+	$AIResponse/Introdution/VBoxContainer/AIReturn.text = translator.get_translation("loading")
 	
 	var request = "Me dê a alternativa correta e uma explicação dela:
 		1.	Qual será o resultado do seguinte código?

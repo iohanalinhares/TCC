@@ -35,6 +35,13 @@ func _ready() -> void:
 	$Save.text = translator.get_translation("buttons.save")
 	$Back.text = translator.get_translation("buttons.back")
 	
+	$IncorrectAnswer/Label.text = translator.get_translation("incorrectAnswer")
+	$IncorrectAnswer/TryAgain.text = translator.get_translation("buttons.tryAgain")
+	
+	$ConcludedChallange/Label.text = translator.get_translation("challangeCompleted")
+	
+	$AIResponse/Introdution/VBoxContainer/AIReturn.text = translator.get_translation("loading")
+	
 	if challange_result && challange_result[0].challange05 == "not_completed":
 		$ConcludedChallange.visible = false
 	else:
@@ -60,7 +67,7 @@ func _ready() -> void:
 		$QuantityAI.text = "0"
 		$QuantityCards.text = "0"
 		
-	# VERIFICA SE A QUANTIDADE DA DICA FOR 0 PARA DESABILIKTAR O BOTÃO
+	# VERIFICA SE A QUANTIDADE DA DICA FOR 0 PARA DESABILITAR O BOTÃO
 	if tips_result[0].tip == 0:
 		$Help.disabled = true
 		$Help.self_modulate = Color("7F7F7F")
@@ -126,7 +133,7 @@ func _on_try_again_pressed() -> void:
 func _on_help_pressed() -> void:
 	$AIResponse/Introdution/VBoxContainer/AIReturn.text = "Carregando..."
 	
-	var request = "Sem me dar a respostga correta, me dê uma dica sobre a resposta correta:
+	var request = "Sem me dar a resposta correta, me dê uma dica sobre a resposta correta:
 		5. O que acontece ao rodar o seguinte código?
 		let nome = 'Maria';
 		const idade = 25;

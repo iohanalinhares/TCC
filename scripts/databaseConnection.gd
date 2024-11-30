@@ -40,6 +40,7 @@ func _ready():
 		print('usuário adicionado')
 	
 	update_star_textures(user_challanges)
+	update_challange_sprite(user_challanges)
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
 	translator = preload("res://scripts/translation.gd").new()
@@ -49,7 +50,15 @@ func _ready():
 	$ColorRect/Label.text = "JavaScript: " + translator.get_translation("level") + " 1"
 	pass
 
-
+func update_challange_sprite(data):
+	var challenges = data[0]
+	for i in range(1, 6):
+		var challenge_key = "challange0" + str(i)
+		var texture_challange_name = get_node("Challange0" + str(i) + "/SpriteChallange0" + str(i))
+		print(texture_challange_name)
+		if challenges.has(challenge_key) and challenges[challenge_key] == "completed":
+			texture_challange_name.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
+			
 # FUNÇÃO QUE PREENCHE AS ESTRELAS CONFORME QUANTIDADE DE DESAFIOS COMPLETADOS
 func update_star_textures(data):
 	var challenges = data[0]

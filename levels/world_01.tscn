@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cqoxh38m0orrt" path="res://assets/CoolSchool_tileset_48px/CoolSchool_for_MV_MZ/Union.png" id="5_m8rp4"]
 [ext_resource type="Texture2D" uid="uid://c3g4gu3c8e7fb" path="res://assets/CoolSchool_tileset_48px/CoolSchool_for_MV_MZ/division-botton.png" id="5_vstlk"]
 [ext_resource type="Texture2D" uid="uid://ddngtsioud7hc" path="res://assets/icons/configuration.png" id="10_5d2lq"]
-[ext_resource type="Script" path="res://scripts/collisionChallangeLearn.gd" id="11_ufd6u"]
+[ext_resource type="Script" path="res://scripts/collisionChallenge.gd" id="11_ufd6u"]
 [ext_resource type="Texture2D" uid="uid://tnbtkkljc5r8" path="res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_question.png" id="12_ph3wi"]
 [ext_resource type="Texture2D" uid="uid://dgqw0jiidc1c0" path="res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_idea.png" id="12_vrub2"]
 [ext_resource type="Texture2D" uid="uid://d1yje7hy6rfjh" path="res://assets/icons/configuration-pressed.png" id="14_jerv5"]
@@ -545,7 +545,7 @@ shape = SubResource("RectangleShape2D_pp7j7")
 [node name="Challange02" type="Node2D" parent="."]
 position = Vector2(692, 658)
 
-[node name="SpriteChallenge02" type="Sprite2D" parent="Challange02"]
+[node name="SpriteChallange02" type="Sprite2D" parent="Challange02"]
 texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange02" type="Area2D" parent="Challange02"]
@@ -559,7 +559,7 @@ shape = SubResource("RectangleShape2D_pp7j7")
 [node name="Challange03" type="Node2D" parent="."]
 position = Vector2(499, 323)
 
-[node name="SpriteChallenge03" type="Sprite2D" parent="Challange03"]
+[node name="SpriteChallange03" type="Sprite2D" parent="Challange03"]
 texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange03" type="Area2D" parent="Challange03"]
@@ -573,7 +573,7 @@ shape = SubResource("RectangleShape2D_pp7j7")
 [node name="Challange04" type="Node2D" parent="."]
 position = Vector2(899, 177)
 
-[node name="SpriteChallenge04" type="Sprite2D" parent="Challange04"]
+[node name="SpriteChallange04" type="Sprite2D" parent="Challange04"]
 texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange04" type="Area2D" parent="Challange04"]
@@ -587,7 +587,7 @@ shape = SubResource("RectangleShape2D_pp7j7")
 [node name="Challange05" type="Node2D" parent="."]
 position = Vector2(1425, 469)
 
-[node name="SpriteChallenge05" type="Sprite2D" parent="Challange05"]
+[node name="SpriteChallange05" type="Sprite2D" parent="Challange05"]
 texture = ExtResource("12_ph3wi")
 
 [node name="ColisionChallange05" type="Area2D" parent="Challange05"]

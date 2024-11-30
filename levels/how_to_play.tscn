@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbcs1r77hgb0e"]
+
+[ext_resource type="Texture2D" uid="uid://jq1hxv74rd8u" path="res://assets/images/background_lg.png" id="1_lq5mt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpf1a"]
+bg_color = Color(0.964706, 0.937255, 0.913725, 0.156863)
+
+[node name="HowToPlay" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_lq5mt")
+
+[node name="Title" type="HBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 1420.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 50
+text = "Como jogar?"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 874.0
+offset_top = 923.0
+offset_right = 1046.0
+offset_bottom = 987.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpf1a")
+text = "Voltar"

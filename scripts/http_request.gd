@@ -1,6 +1,6 @@
 extends HTTPRequest
 
-var api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent"  # Substitua pelo endpoint real da Gemini
+var api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent"
 var api_key = "AIzaSyBgv2t-pgQyxwrhOqGObCgqCuuy_CVPzYs"
 var http_request
 var target_node

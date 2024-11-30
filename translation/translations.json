@@ -21,6 +21,7 @@
 		"getCards": "Eliminate alternatives",
 		"incorrectAnswer": "Incorrect answer",
 		"challangeCompleted": "Challenge completed",
+		"loading": "Loading...",
 		"tips": {
 			"ai": "AI response",
 			"tip": "tip",
@@ -134,6 +135,7 @@
 		"getCards": "Eliminar alternativas",
 		"incorrectAnswer": "Resposta incorreta",
 		"challangeCompleted": "Desafio concluído",
+		"loading": "Carregando...",
 		"tips": {
 			"ai": "1 resposta de IA",
 			"tip": "1 dica",
