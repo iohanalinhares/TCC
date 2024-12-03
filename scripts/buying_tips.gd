@@ -4,14 +4,15 @@ var database = SQLite
 var translator
 var dynamic_scene = preload("res://levels/modal.tscn")
 var current_scene = null
+var money
+var user_id
 
 func _ready() -> void:
 	database = SQLite.new()
 	database.path = "res://database/database.db"
 	database.open_db()
 	
-	var user_id = Global.user_id
-	#var user_id = 11
+	user_id = Global.user_id
 	
 	var insert_table = """
 		INSERT INTO tips (id, ai, tip, cards)
@@ -27,27 +28,31 @@ func _ready() -> void:
 	translator.load_translations()
 	translator.set_language(query_result[0].language)
 	
-	print(query_result[0].language)
-	
 	$Title/Title.text = translator.get_translation("tipsStore")
 	$Back.text = translator.get_translation("buttons.back")
 	
 	# VERIFICA SE O USUÁRIO EXISTE NA TABLE OU SE É PRECISO CRIAR UM ITEM DELE
-	if user_tips:
-		print('usuário existe')
-	else:
+	if !user_tips:
 		var values = [user_id, 1, 3, 3]
 		user_tips = database.query_with_bindings(insert_table, values)
 		print('usuário adicionado')
+		
+	select_money()
+	validacao_de_compra()
+	
+func select_money():
+	var condition = "id = '" + str(user_id) + "'"
+	var query_result = database.select_rows("users", condition, ["money, language"])
 	
 	# VERIFICA SE O USUÁRIO TEM PONTOS, SE NÃO TIVER SETA COMO 0
-	var money = $"Money"
+	money = $"Money"
 	if query_result:
 		money.text = str(query_result[0].money)
 	else:
 		money.text = "0"
 	pass
 	
+func validacao_de_compra():
 	if int(money.text) < 80:
 		$ColorRect2/Button.disabled = true
 	else:
@@ -77,7 +82,7 @@ func _ready() -> void:
 		$ColorRect7/Button.disabled = true
 	else:
 		$ColorRect7/Button.disabled = false
-
+	
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/world_01.tscn")
@@ -88,6 +93,8 @@ func _on_back_pressed() -> void:
 func load_dynamic_scene(title: String, money: int, typeButtonPressed: String):
 	if current_scene != null:
 		current_scene.queue_free()
+		await current_scene.to_signal("tree_exited")
+		select_money()
 	
 	current_scene = dynamic_scene.instantiate()
 	$Node2D.add_child(current_scene)

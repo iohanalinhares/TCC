@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var quantity_help_label = $QuantityHelp
+@onready var quantity_ai_label = $QuantityAI
+@onready var quantity_cards_label = $QuantityCards
+
 var database = SQLite
 var money = 0
 var resposta_selecionada = 0
@@ -9,6 +13,7 @@ var query_result
 var score = 50
 var tips_result
 var translator
+var user_id
 
 var button_group = ButtonGroup.new()
 
@@ -17,12 +22,11 @@ func _ready() -> void:
 	database.path = "res://database/database.db"
 	database.open_db()
 	
-	var user_id = Global.user_id
+	user_id = Global.user_id
 
 	condition = "id = '" + str(user_id) + "'"
 	query_result = database.select_rows("users", condition, ["money, language"])
 	var challange_result = database.select_rows("challanges", condition, ["challange02"])
-	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
 	translator = preload("res://scripts/translation.gd").new()
@@ -58,27 +62,30 @@ func _ready() -> void:
 	button2.pressed.connect(func(): resposta_selecionada = 2)
 	button3.pressed.connect(func(): resposta_selecionada = 3)
 	button4.pressed.connect(func(): resposta_selecionada = 4)
-	
-	# DEFINIÇÃO DA QUANTIDADE DE DICAS DO USUÁRIO
-	if tips_result:
-		$QuantityHelp.text = str(tips_result[0].tip)
-		$QuantityAI.text = str(tips_result[0].ai)
-		$QuantityCards.text = str(tips_result[0].cards)
-	else:
-		$QuantityHelp.text = "0"
-		$QuantityAI.text = "0"
-		$QuantityCards.text = "0"
 		
-	# VERIFICA SE A QUANTIDADE DA DICA FOR 0 PARA DESABILIKTAR O BOTÃO
+	atualizar_quantidade_dicas()
+	
+	pass
+
+func atualizar_quantidade_dicas():
+	condition = "id = '" + str(user_id) + "'"
+	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
+	
+	# POPULA O LABEL COM A QUANTIDADE ENCONTRADA NO BANCO
+	quantity_help_label.text = str(tips_result[0].tip)
+	quantity_ai_label.text = str(tips_result[0].ai)
+	quantity_cards_label.text = str(tips_result[0].cards)
+	
+	# VERIFICA SE A QUANTIDADE DA DICA FOR 0 PARA DESABILITAR O BOTÃO
 	if tips_result[0].tip == 0:
 		$Help.disabled = true
-		$Help.self_modulate = Color("7F7F7F")
+		$QuantityHelp.self_modulate = Color("7F7F7F")
 	else:
 		$Help.disabled = false
 		
 	if tips_result[0].ai == 0:
 		$AI.disabled = true
-		$AI.self_modulate = Color("7F7F7F")
+		$QuantityAI.self_modulate = Color("7F7F7F")
 	else:
 		$AI.disabled = false
 		
@@ -88,7 +95,6 @@ func _ready() -> void:
 	else:
 		$Cards.disabled = false
 	pass
-
 
 func _on_save_pressed() -> void:
 	if resposta_selecionada != 0:
@@ -135,7 +141,7 @@ func _on_try_again_pressed() -> void:
 func _on_help_pressed() -> void:
 	$AIResponse/Introdution/VBoxContainer/AIReturn.text = "Carregando..."
 		
-	var request = "Sem me dar a respostga correta, me dê uma dica sobre a resposta correta:
+	var request = "Sem me dar a resposta correta, me dê uma dica sobre a questão no idioma:" + query_result[0].language + "
 		2.	O que será exibido no console ao rodar o código abaixo?
 		let idade = 17;
 		if (idade >= 18) {
@@ -155,6 +161,7 @@ func _on_help_pressed() -> void:
 	var tip = tips_result[0].tip
 	var update_data = {"tip": tip - 1}
 	var update_result = database.update_rows("tips", condition, update_data)
+	atualizar_quantidade_dicas()
 	pass
 	
 
@@ -167,7 +174,7 @@ func _on_ok_pressed() -> void:
 func _on_ai_pressed() -> void:
 	$AIResponse/Introdution/VBoxContainer/AIReturn.text = "Carregando..."
 
-	var request = "Me dê a alternativa correta e uma explicação dela:
+	var request = "Me dê a alternativa correta e uma explicação dela no idioma:" + query_result[0].language + "
 		2.	O que será exibido no console ao rodar o código abaixo?
 		let idade = 17;
 		if (idade >= 18) {
@@ -186,6 +193,7 @@ func _on_ai_pressed() -> void:
 	var ai = tips_result[0].ai
 	var update_data = {"ai": ai - 1}
 	var update_result = database.update_rows("tips", condition, update_data)
+	atualizar_quantidade_dicas()
 	pass
 	
 
@@ -197,4 +205,5 @@ func _on_cards_pressed() -> void:
 	var cards = tips_result[0].cards
 	var update_data = {"cards": cards - 1}
 	var update_result = database.update_rows("tips", condition, update_data)
+	atualizar_quantidade_dicas()
 	pass

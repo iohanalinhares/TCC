@@ -111,6 +111,33 @@
 				"title": "Functions",
 				"text": "Functions are reusable blocks of code that can be called to perform a specific task. They can accept parameters and return a value. The traditional function is defined using the function keyword.\n\nExample of a traditional function:"
 			}
+		},
+		"help": {
+			"title": "How to Play?",
+			"space": {
+				"title": "To open challenges and study area",
+				"description": "Use the 'Space' key to open the study and challenge areas (marked with a balloon icon)."
+			},
+			"esc": {
+				"title": "To close challenges and study area",
+				"description": "Use the 'Esc' key to close the study and challenge areas."
+			},
+			"down": {
+				"title": "To move the character down",
+				"description": "Use the key indicated in the image to make the character move down."
+			},
+			"left": {
+				"title": "To move the character left",
+				"description": "Use the key indicated in the image to make the character move left."
+			},
+			"right": {
+				"title": "To move the character right",
+				"description": "Use the key indicated in the image to make the character move right."
+			},
+			"up": {
+				"title": "To move the character up",
+				"description": "Use the key indicated in the image to make the character move up."
+			}
 		}
 	},
 	"portuguese": {
@@ -224,6 +251,33 @@
 			"topic06": {
 				"title": "Funções",
 				"text": "Funções são blocos de código reutilizáveis que podem ser chamados para realizar uma tarefa específica. Elas podem receber parâmetros e retornar um valor. A função tradicional é definida com a palavra-chave function.\n\nExemplo de função tradicional:"
+			}
+		},
+		"help": {
+			"title": "Como jogar?",
+			"space": {
+				"title": "Para abrir desafios e área de estudo",
+				"description": "Use a tecla de 'Espaço' para abrir as áreas de estudo e de desafios (sinalizadas com o ícone de balão)"
+			},
+			"esc": {
+				"title": "Para fechar desafios e área de estudo",
+				"description": "Use a tecla de 'Esc' para fechar as áreas de estudo e de desafios."
+			},
+			"down": {
+				"title": "Para andar com o boneco para abaixo",
+				"description": "Use a tecla indicada na imagem para que o boneco ande para baixo."
+			},
+			"left": {
+				"title": "Para andar com o boneco para a esquerda",
+				"description": "Use a tecla indicada na imagem para que o boneco ande para a esquerda."
+			},
+			"right": {
+				"title": "Para andar com o boneco para a direita",
+				"description": "Use a tecla indicada na imagem para que o boneco ande para a direita."
+			},
+			"up": {
+				"title": "Para andar com o boneco para cima",
+				"description": "Use a tecla indicada na imagem para que o boneco ande para cima."
 			}
 		}
 	}

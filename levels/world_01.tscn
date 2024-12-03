@@ -686,4 +686,5 @@ size_flags_horizontal = 4
 texture = ExtResource("23_nnv1k")
 
 [connection signal="pressed" from="TextureButtonSettings" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButtonHelp" to="." method="_on_texture_button_help_pressed"]
 [connection signal="pressed" from="TextureButtonTips" to="." method="_on_texture_button_tips_pressed"]
