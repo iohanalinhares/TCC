@@ -41,7 +41,6 @@ func _on_login_button_down() -> void:
 		if(verifyReturn == true):
 			get_tree().change_scene_to_file("res://levels/world_01.tscn")
 			Global.user_id = query_result[0].id
-			print(Global.user_id)
 		else:
 			incorrect_user_password.text = "Usuário ou senha incorretos!"
 			incorrect_user_password.visible = true

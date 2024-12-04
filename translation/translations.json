@@ -22,6 +22,8 @@
 		"incorrectAnswer": "Incorrect answer",
 		"challangeCompleted": "Challenge completed",
 		"loading": "Loading...",
+		"congratulations": "Congratulations!",
+		"nivelConcluded": "You have completed Level 1: JavaScript",
 		"tips": {
 			"ai": "AI response",
 			"tip": "tip",
@@ -43,7 +45,8 @@
 			"conclude": "Conclude",
 			"send": "Send",
 			"tryAgain": "Try again",
-			"ok": "OK"
+			"ok": "OK",
+			"nextLevel": "Next Level"
 		},
 		"errorMessages": {
 			"requiredField": "This field is required!",
@@ -163,6 +166,8 @@
 		"incorrectAnswer": "Resposta incorreta",
 		"challangeCompleted": "Desafio concluído",
 		"loading": "Carregando...",
+		"congratulations": "Parabéns!",
+		"nivelConcluded": "Você concluiu o Nível 1: JavaScript",
 		"tips": {
 			"ai": "1 resposta de IA",
 			"tip": "1 dica",
@@ -184,7 +189,8 @@
 			"conclude": "Concluir",
 			"send": "Enviar",
 			"tryAgain": "Tentar novamente",
-			"ok": "OK"
+			"ok": "OK",
+			"nextLevel": "Próximo nível"
 		},
 		"errorMessages": {
 			"requiredField": "Este campo é obrigatório!",
@@ -239,13 +245,13 @@
 				"title": "Estrutura de Repetição",
 				"text": "As estruturas de repetição (loops) são usadas para executar um bloco de código várias vezes, até que uma condição seja satisfeita. Existem diferentes tipos de loops em JavaScript:",
 				"titleFor": "FOR",
-				"textFor": "O for é uma estrutura de repetição usada quando sabemos quantas vezes o loop deve ser executado. Ele é dividido em três partes: inicialização, condição e incremento.\n\nSintaxe do for:",
+				"textFor": "O for é uma estrutura de repetição usada quando sabemos quantas vezes o loop deve ser executado. Ele é dividido em três partes: inicialização, condição e incremento.\n\nSintaxe 'for':",
 				"textForComplement": "Aqui, o loop começa com i = 0 e continua enquanto i for menor que 5, incrementando i em 1 a cada iteração. O código dentro do loop será executado 5 vezes, exibindo os valores de 0 a 4 no console.\n",
 				"titleWhile": "WHILE",
-				"textWhile": "O while é usado quando a quantidade de repetições não é conhecida previamente. Ele continua a executar o bloco de código enquanto a condição for verdadeira.\n\nSintaxe do while:",
+				"textWhile": "O while é usado quando a quantidade de repetições não é conhecida previamente. Ele continua a executar o bloco de código enquanto a condição for verdadeira.\n\nSintaxe 'while':",
 				"textWhileComplement": "Nesse exemplo, o loop será executado enquanto contador for menor que 3. A cada iteração, contador é incrementado em 1, e o valor é exibido no console.",
 				"titleDoWhile": "DO WHILE",
-				"textDoWhile": "O do while é similar ao while, mas garante que o bloco de código seja executado ao menos uma vez, independentemente da condição.\n\nSintaxe do do while:",
+				"textDoWhile": "O do while é similar ao while, mas garante que o bloco de código seja executado ao menos uma vez, independentemente da condição.\n\nSintaxe 'do while':",
 				"textDoWhileComplement": "Aqui, o código será executado primeiro, e só depois a condição será verificada. Mesmo que i já fosse maior que 3 no início, a primeira execução aconteceria."
 			},
 			"topic06": {

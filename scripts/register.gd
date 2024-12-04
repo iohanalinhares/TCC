@@ -73,7 +73,7 @@ func _on_register_button_button_down() -> void:
 	var data = {
 		"username": $"Username/input-name".text,
 		"password": hashed_password,
-		"money": 0,
+		"money": 50,
 		"level": 1,
 		"language": language,
 		"sounds": true,
@@ -81,6 +81,31 @@ func _on_register_button_button_down() -> void:
 	}
 	
 	database.insert_row("users", data)
+	var user_added = database.select_rows("users", condition, ["id, username, password"])
+	Global.user_id = user_added[0].id
+	
+	# CRIAÇÃO DO USUÁRIO NA DATATABLE TIPS
+	var data_tips = {
+		"id": user_added[0].id,
+		"ai": 0,
+		"tip": 1,
+		"cards": 1
+	}
+
+	database.insert_row("tips", data_tips)
+	
+	# CRIAÇÃO DO USUÁRIO NA DATATABLE TIPS
+	var data_challanges = {
+		"id": user_added[0].id,
+		"level": 1,
+		"challange01": "not_completed",
+		"challange02": "not_completed",
+		"challange03": "not_completed",
+		"challange04": "not_completed",
+		"challange05": "not_completed",
+	}
+
+	database.insert_row("challanges", data_challanges)
 	
 	get_tree().change_scene_to_file("res://levels/world_01.tscn")
 	pass

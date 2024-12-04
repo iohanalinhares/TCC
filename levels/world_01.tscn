@@ -474,7 +474,7 @@ script = ExtResource("1_yoa8n")
 z_index = 2
 scale = Vector2(-0.668918, 0.668918)
 sprite_frames = SubResource("SpriteFrames_rujk3")
-animation = &"run"
+animation = &"test"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="player"]

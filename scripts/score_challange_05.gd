@@ -68,6 +68,18 @@ func atualizar_quantidade_dicas():
 	condition = "id = '" + str(user_id) + "'"
 	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
 	
+	var insert_table = """
+		INSERT INTO tips (id, ai, tip, cards)
+		VALUES(?, ?, ?, ?)
+	"""
+		
+	# VERIFICA SE O USUÁRIO EXISTE NA TABLE OU SE É PRECISO CRIAR UM ITEM DELE
+	if !tips_result:
+		var values = [user_id, 0, 1, 1]
+		database.query_with_bindings(insert_table, values)
+		tips_result = database.select_rows("tips", condition, ["id, ai, tip, cards"])
+		print('usuário adicionado em tips')
+	
 	# POPULA O LABEL COM A QUANTIDADE ENCONTRADA NO BANCO
 	quantity_help_label.text = str(tips_result[0].tip)
 	quantity_ai_label.text = str(tips_result[0].ai)

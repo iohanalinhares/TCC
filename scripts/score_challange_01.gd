@@ -27,7 +27,6 @@ func _ready() -> void:
 	condition = "id = '" + str(user_id) + "'"
 	query_result = database.select_rows("users", condition, ["money, language"])
 	var challange_result = database.select_rows("challanges", condition, ["challange01"])
-	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
 	translator = preload("res://scripts/translation.gd").new()
@@ -69,6 +68,18 @@ func atualizar_quantidade_dicas():
 	condition = "id = '" + str(user_id) + "'"
 	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
 	
+	var insert_table = """
+		INSERT INTO tips (id, ai, tip, cards)
+		VALUES(?, ?, ?, ?)
+	"""
+		
+	# VERIFICA SE O USUÁRIO EXISTE NA TABLE OU SE É PRECISO CRIAR UM ITEM DELE
+	if !tips_result:
+		var values = [user_id, 0, 1, 1]
+		database.query_with_bindings(insert_table, values)
+		tips_result = database.select_rows("tips", condition, ["id, ai, tip, cards"])
+		print('usuário adicionado em tips')
+	
 	# POPULA O LABEL COM A QUANTIDADE ENCONTRADA NO BANCO
 	quantity_help_label.text = str(tips_result[0].tip)
 	quantity_ai_label.text = str(tips_result[0].ai)
@@ -94,7 +105,9 @@ func atualizar_quantidade_dicas():
 		$Cards.disabled = false
 	pass
 
-func _on_save_pressed() -> void:
+const WorldConnection = preload("res://scripts/databaseConnection.gd")
+
+func _on_save_pressed() -> void:	
 	if resposta_selecionada != 0:
 		verificar_resposta(resposta_selecionada)
 	else:
@@ -113,6 +126,10 @@ func verificar_resposta(numero_resposta):
 		var challange_completed = database.update_rows("challanges", condition, {"challange01": "completed"})
 		$ConcludedChallange.visible = true
 		$IncorrectAnswer.visible = false
+		
+		var user_challanges = database.select_rows("challanges", condition, ["id, level, challange01, challange02, challange03, challange04, challange05"])
+		var world_instance = WorldConnection.new()
+		world_instance.update_challange_sprite(user_challanges)
 		
 		database.close_db()
 	else:

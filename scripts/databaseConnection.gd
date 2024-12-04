@@ -13,10 +13,10 @@ func _ready():
 	database.open_db()
 	
 	var user_id = Global.user_id
-	
+		
 	var condition = "id = '" + str(user_id) + "'"
-	
 	var query_result = database.select_rows("users", condition, ["money, language"])
+
 	var money = $"Money"
 	if query_result:
 		money.text = str(query_result[0].money)
@@ -32,11 +32,10 @@ func _ready():
 	var user_challanges = database.select_rows("challanges", condition, ["id, level, challange01, challange02, challange03, challange04, challange05"])
 	
 	# VERIFICA SE O USUÁRIO EXISTE NA TABLE OU SE É PRECISO CRIAR UM ITEM DELE
-	if user_challanges:
-		print('usuário existe')
-	else:
+	if !user_challanges:
 		var values = [user_id, 1, "not_completed", "not_completed", "not_completed", "not_completed", "not_completed"]
-		user_challanges = database.query_with_bindings(insert_table, values)
+		database.query_with_bindings(insert_table, values)
+		user_challanges = database.select_rows("challanges", condition, ["id, level, challange01, challange02, challange03, challange04, challange05"])
 		print('usuário adicionado')
 	
 	update_star_textures(user_challanges)
@@ -51,13 +50,15 @@ func _ready():
 	pass
 
 func update_challange_sprite(data):
+	print(data)
 	var challenges = data[0]
 	for i in range(1, 6):
 		var challenge_key = "challange0" + str(i)
 		var texture_challange_name = get_node("Challange0" + str(i) + "/SpriteChallange0" + str(i))
-		print(texture_challange_name)
 		if challenges.has(challenge_key) and challenges[challenge_key] == "completed":
-			texture_challange_name.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
+			print(i)
+			print(texture_challange_name.texture)
+			#texture_challange_name.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
 			
 # FUNÇÃO QUE PREENCHE AS ESTRELAS CONFORME QUANTIDADE DE DESAFIOS COMPLETADOS
 func update_star_textures(data):
@@ -94,3 +95,6 @@ func alter_star() -> void:
 func _on_texture_button_help_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/how_to_play.tscn")
 	pass
+
+func teste():
+	print("Função teste() chamada do challange01!")

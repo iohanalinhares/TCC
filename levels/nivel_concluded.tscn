@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsmhrrqfy7c0r"]
+
+[ext_resource type="Texture2D" uid="uid://jq1hxv74rd8u" path="res://assets/images/background_lg.png" id="1_ic4m0"]
+[ext_resource type="Texture2D" uid="uid://i34yo5k38itm" path="res://assets/icons/money.png" id="2_khq5f"]
+[ext_resource type="Texture2D" uid="uid://b5cbx2xcd7kx0" path="res://assets/kenney_toon-characters-1/Female adventurer/Tilesheet/character_femaleAdventurer_sheetHD.png" id="4_7kxut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld3le"]
+bg_color = Color(0.964706, 0.937255, 0.913725, 0.156863)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4gho"]
+atlas = ExtResource("4_7kxut")
+region = Rect2(1344, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjmua"]
+atlas = ExtResource("4_7kxut")
+region = Rect2(1536, 0, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lk25q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4gho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjmua")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0bwd"]
+
+[node name="NivelConcluded" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ic4m0")
+
+[node name="Congratulations" type="Label" parent="."]
+offset_left = 958.0
+offset_top = 236.0
+offset_right = 1606.0
+offset_bottom = 373.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 100
+text = "PARABÉNS!"
+uppercase = true
+
+[node name="Concluded" type="Label" parent="."]
+offset_left = 958.0
+offset_top = 397.0
+offset_right = 1728.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 50
+text = "Você concluiu o
+Nível 1: Javascript"
+
+[node name="MoneyIcon" type="TextureRect" parent="."]
+offset_left = 958.0
+offset_top = 660.0
+offset_right = 1028.0
+offset_bottom = 730.0
+texture = ExtResource("2_khq5f")
+
+[node name="money" type="Label" parent="."]
+offset_left = 1052.0
+offset_top = 668.0
+offset_right = 1120.0
+offset_bottom = 723.0
+theme_override_colors/font_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_font_sizes/font_size = 40
+text = "100"
+
+[node name="NextLevel" type="Button" parent="."]
+offset_left = 1578.0
+offset_top = 923.0
+offset_right = 1818.0
+offset_bottom = 987.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.839216, 0.694118, 0.658824, 1)
+theme_override_colors/font_pressed_color = Color(0.584314, 0.388235, 0.258824, 1)
+theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld3le")
+text = "Próximo Nível"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(400, 360)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(71.5, 95.3334)
+scale = Vector2(1.74479, 1.74479)
+sprite_frames = SubResource("SpriteFrames_lk25q")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.747173
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_h0bwd")

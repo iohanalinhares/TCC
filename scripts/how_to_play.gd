@@ -8,7 +8,7 @@ func _ready() -> void:
 	database.path = "res://database/database.db"
 	database.open_db()
 	
-	var user_id = 11
+	var user_id = Global.user_id
 	var condition = "id = '" + str(user_id) + "'"
 	var query_result = database.select_rows("users", condition, ["language"])
 	
