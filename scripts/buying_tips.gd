@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var click = $ClickButton as AudioStreamPlayer
+
 var database = SQLite
 var translator
 var dynamic_scene = preload("res://levels/modal.tscn")
@@ -35,7 +37,6 @@ func _ready() -> void:
 	if !user_tips:
 		var values = [user_id, 1, 3, 3]
 		user_tips = database.query_with_bindings(insert_table, values)
-		print('usuário adicionado')
 		
 	select_money()
 	validacao_de_compra()
@@ -135,3 +136,8 @@ func _on_button_tips_3x_pressed() -> void:
 	pass
 
 # FIM DO ENVIO DE INFORMAÇÕES PARA O MODAL DE CONFIRMAÇÃO DE COMPRA
+
+
+func _on_button_pressed() -> void:
+	click.play()
+	pass # Replace with function body.

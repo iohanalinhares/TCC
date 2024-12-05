@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ckxalxles05fh"]
+[gd_scene load_steps=29 format=3 uid="uid://ckxalxles05fh"]
 
 [ext_resource type="Script" path="res://scripts/score_challange_02.gd" id="1_oheoe"]
 [ext_resource type="Texture2D" uid="uid://ctxd0v28pjbav" path="res://assets/images/background.png" id="1_ukoty"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://ofpwa0chmc8m" path="res://assets/icons/ai-icon-disabled.png" id="11_t18e0"]
 [ext_resource type="Texture2D" uid="uid://bhoni6tvcbw3d" path="res://assets/icons/cards-icon-hover.png" id="12_ufkrr"]
 [ext_resource type="Texture2D" uid="uid://dykbhjeor6fha" path="res://assets/icons/cards-icon-disabled.png" id="15_qd3sx"]
+[ext_resource type="AudioStream" uid="uid://q42wr5varr5b" path="res://sounds/hover_button.mp3" id="18_2u3vi"]
+[ext_resource type="AudioStream" uid="uid://ce4jt2vnytw2e" path="res://sounds/button_click.wav" id="19_6utr7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rw4v"]
 bg_color = Color(0.678431, 0.752941, 0.694118, 1)
@@ -449,8 +451,20 @@ text = "Carregando..."
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="HoverButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_2u3vi")
+volume_db = -15.0
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_6utr7")
+volume_db = -5.0
+
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Option_01" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Option_02" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Option_03" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Option_04" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="AI" to="." method="_on_ai_pressed"]
 [connection signal="pressed" from="Cards" to="." method="_on_cards_pressed"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsmhrrqfy7c0r"]
+[gd_scene load_steps=11 format=3 uid="uid://bsmhrrqfy7c0r"]
 
+[ext_resource type="Script" path="res://scripts/nivel_concluded.gd" id="1_ag0gi"]
 [ext_resource type="Texture2D" uid="uid://jq1hxv74rd8u" path="res://assets/images/background_lg.png" id="1_ic4m0"]
 [ext_resource type="Texture2D" uid="uid://i34yo5k38itm" path="res://assets/icons/money.png" id="2_khq5f"]
 [ext_resource type="Texture2D" uid="uid://b5cbx2xcd7kx0" path="res://assets/kenney_toon-characters-1/Female adventurer/Tilesheet/character_femaleAdventurer_sheetHD.png" id="4_7kxut"]
+[ext_resource type="AudioStream" uid="uid://ce4jt2vnytw2e" path="res://sounds/button_click.wav" id="5_86kuo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld3le"]
 bg_color = Color(0.964706, 0.937255, 0.913725, 0.156863)
@@ -32,6 +34,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0bwd"]
 
 [node name="NivelConcluded" type="Node2D"]
+script = ExtResource("1_ag0gi")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1920.0
@@ -45,19 +48,19 @@ offset_bottom = 40.0
 texture = ExtResource("1_ic4m0")
 
 [node name="Congratulations" type="Label" parent="."]
-offset_left = 958.0
-offset_top = 236.0
-offset_right = 1606.0
-offset_bottom = 373.0
+offset_left = 926.0
+offset_top = 260.0
+offset_right = 1358.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 text = "PARABÉNS!"
 uppercase = true
 
 [node name="Concluded" type="Label" parent="."]
-offset_left = 958.0
+offset_left = 926.0
 offset_top = 397.0
-offset_right = 1728.0
+offset_right = 1352.0
 offset_bottom = 538.0
 theme_override_colors/font_color = Color(0.964706, 0.937255, 0.913725, 1)
 theme_override_font_sizes/font_size = 50
@@ -65,16 +68,16 @@ text = "Você concluiu o
 Nível 1: Javascript"
 
 [node name="MoneyIcon" type="TextureRect" parent="."]
-offset_left = 958.0
+offset_left = 926.0
 offset_top = 660.0
-offset_right = 1028.0
+offset_right = 996.0
 offset_bottom = 730.0
 texture = ExtResource("2_khq5f")
 
 [node name="money" type="Label" parent="."]
-offset_left = 1052.0
+offset_left = 1020.0
 offset_top = 668.0
-offset_right = 1120.0
+offset_right = 1088.0
 offset_bottom = 723.0
 theme_override_colors/font_color = Color(0.839216, 0.694118, 0.658824, 1)
 theme_override_font_sizes/font_size = 40
@@ -106,3 +109,9 @@ frame_progress = 0.747173
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_h0bwd")
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_86kuo")
+volume_db = -5.0
+
+[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]

@@ -8,6 +8,14 @@ func _ready() -> void:
 	
 	$"Password/input-password".secret = true
 	$"ConfirmPassword/input-confirm-password".secret = true
+	$Language/OptionButton.selected = 0
+	
+	# MUDA O FOCO DO INPUT A PARTIR DO TAB
+	$"Username/input-name".grab_focus()
+	$"Username/input-name".focus_next = $"Password/input-password".get_path()
+	$"Password/input-password".focus_next = $"ConfirmPassword/input-confirm-password".get_path()
+	$"ConfirmPassword/input-confirm-password".focus_next = $Language/OptionButton.get_path()
+	$Language/OptionButton.focus_next = $"Username/input-name".get_path()
 	
 	pass
 

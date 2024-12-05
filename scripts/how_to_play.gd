@@ -3,6 +3,8 @@ extends Node2D
 var database = SQLite
 var translator
 
+@onready var click = $ClickButton as AudioStreamPlayer
+
 func _ready() -> void:
 	database = SQLite.new()
 	database.path = "res://database/database.db"
@@ -38,5 +40,6 @@ func _ready() -> void:
 
 
 func _on_back_pressed() -> void:
+	click.play()
 	get_tree().change_scene_to_file("res://levels/world_01.tscn")
 	pass

@@ -7,6 +7,12 @@ func _ready() -> void:
 	database.open_db()
 	
 	$"Password/input-password".secret = true
+	
+	# MUDA O FOCO DO INPUT A PARTIR DO TAB
+	$"Username/input-name".grab_focus()
+	$"Username/input-name".focus_next = $"Password/input-password".get_path()
+	$"Password/input-password".focus_next = $"Username/input-name".get_path()
+	
 	pass
 
 func _on_newuserbutton_button_down() -> void:
@@ -39,8 +45,25 @@ func _on_login_button_down() -> void:
 		var verifyReturn = verify_password(query_result[0].password, password)
 		
 		if(verifyReturn == true):
-			get_tree().change_scene_to_file("res://levels/world_01.tscn")
 			Global.user_id = query_result[0].id
+			var user_id = Global.user_id
+			
+			var conditionCompleted = "id = '" + str(user_id) + "'"
+			var user_challanges = database.select_rows("challanges", conditionCompleted, ["id, level, challange01, challange02, challange03, challange04, challange05"])
+		
+			for challange in user_challanges:
+				var challanges_status = [
+					challange["challange01"],
+					challange["challange02"],
+					challange["challange03"],
+					challange["challange04"],
+					challange["challange05"]
+				]
+
+				if challanges_status.size() > 0 and challanges_status.all(func(item): return item == "completed"):
+					get_tree().change_scene_to_file("res://levels/nivel_concluded.tscn")
+				else:
+					get_tree().change_scene_to_file("res://levels/world_01.tscn")
 		else:
 			incorrect_user_password.text = "Usuário ou senha incorretos!"
 			incorrect_user_password.visible = true

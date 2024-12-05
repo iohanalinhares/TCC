@@ -122,26 +122,26 @@ text = "Entrar"
 [node name="required-username" type="Label" parent="."]
 visible = false
 offset_left = 600.0
-offset_top = 395.0
+offset_top = 435.0
 offset_right = 798.0
-offset_bottom = 418.0
+offset_bottom = 458.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Este campo é obrigatório!"
 
 [node name="required-password" type="Label" parent="."]
 visible = false
 offset_left = 600.0
-offset_top = 549.0
+offset_top = 589.0
 offset_right = 798.0
-offset_bottom = 572.0
+offset_bottom = 612.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Este campo é obrigatório!"
 
 [node name="incorrect-user-password" type="Label" parent="."]
 visible = false
-offset_left = 825.0
+offset_left = 817.0
 offset_top = 889.0
-offset_right = 1100.0
+offset_right = 1096.0
 offset_bottom = 917.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 20

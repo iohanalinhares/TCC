@@ -23,7 +23,8 @@
 		"challangeCompleted": "Challenge completed",
 		"loading": "Loading...",
 		"congratulations": "Congratulations!",
-		"nivelConcluded": "You have completed Level 1: JavaScript",
+		"nivelConcluded": "You have completed\nLevel 1: JavaScript",
+		"nextLevelConstruction": "The next level is still under construction and will be available soon!",
 		"tips": {
 			"ai": "AI response",
 			"tip": "tip",
@@ -46,7 +47,8 @@
 			"send": "Send",
 			"tryAgain": "Try again",
 			"ok": "OK",
-			"nextLevel": "Next Level"
+			"nextLevel": "Next Level",
+			"backToLogin": "Back to login"
 		},
 		"errorMessages": {
 			"requiredField": "This field is required!",
@@ -167,7 +169,8 @@
 		"challangeCompleted": "Desafio concluído",
 		"loading": "Carregando...",
 		"congratulations": "Parabéns!",
-		"nivelConcluded": "Você concluiu o Nível 1: JavaScript",
+		"nivelConcluded": "Você concluiu o\nNível 1: JavaScript",
+		"nextLevelConstruction": "O próximo nível ainda está sendo\nconstruído e estará disponível em\nbreve!",
 		"tips": {
 			"ai": "1 resposta de IA",
 			"tip": "1 dica",
@@ -190,7 +193,8 @@
 			"send": "Enviar",
 			"tryAgain": "Tentar novamente",
 			"ok": "OK",
-			"nextLevel": "Próximo nível"
+			"nextLevel": "Próximo nível",
+			"backToLogin": "Voltar ao login"
 		},
 		"errorMessages": {
 			"requiredField": "Este campo é obrigatório!",

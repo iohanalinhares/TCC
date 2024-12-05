@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://0qt3lly5vgsl"]
+[gd_scene load_steps=85 format=3 uid="uid://0qt3lly5vgsl"]
 
 [ext_resource type="Script" path="res://scripts/databaseConnection.gd" id="1_bxvmb"]
 [ext_resource type="Texture2D" uid="uid://r1js2khe2e28" path="res://assets/kenney_toon-characters-1/Female adventurer/Tilesheet/character_femaleAdventurer_sheet.png" id="1_kgetr"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://dj0ff1ahpuyn" path="res://assets/icons/tips-hover.png" id="21_tffa1"]
 [ext_resource type="Texture2D" uid="uid://i34yo5k38itm" path="res://assets/icons/money.png" id="22_jn655"]
 [ext_resource type="Texture2D" uid="uid://dprbiexh2b0ly" path="res://assets/icons/star.png" id="23_nnv1k"]
+[ext_resource type="AudioStream" uid="uid://bqtd83o6k35i8" path="res://sounds/bg_music.mp3" id="24_oqxmb"]
+[ext_resource type="AudioStream" uid="uid://ce4jt2vnytw2e" path="res://sounds/button_click.wav" id="25_hcoab"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y4asn"]
 tile_data = PackedInt32Array(0, 196613, 1)
@@ -684,6 +686,15 @@ offset_right = 740.0
 offset_bottom = 57.0
 size_flags_horizontal = 4
 texture = ExtResource("23_nnv1k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_oqxmb")
+volume_db = -15.0
+autoplay = true
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_hcoab")
+volume_db = -5.0
 
 [connection signal="pressed" from="TextureButtonSettings" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButtonHelp" to="." method="_on_texture_button_help_pressed"]

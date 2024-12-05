@@ -3,6 +3,8 @@ extends Node2D
 @onready var quantity_help_label = $QuantityHelp
 @onready var quantity_ai_label = $QuantityAI
 @onready var quantity_cards_label = $QuantityCards
+@onready var hover = $HoverButton as AudioStreamPlayer
+@onready var click = $ClickButton as AudioStreamPlayer
 
 var database = SQLite
 var money = 0
@@ -78,7 +80,6 @@ func atualizar_quantidade_dicas():
 		var values = [user_id, 0, 1, 1]
 		database.query_with_bindings(insert_table, values)
 		tips_result = database.select_rows("tips", condition, ["id, ai, tip, cards"])
-		print('usuário adicionado em tips')
 	
 	# POPULA O LABEL COM A QUANTIDADE ENCONTRADA NO BANCO
 	quantity_help_label.text = str(tips_result[0].tip)
@@ -108,6 +109,7 @@ func atualizar_quantidade_dicas():
 const WorldConnection = preload("res://scripts/databaseConnection.gd")
 
 func _on_save_pressed() -> void:	
+	click.play()
 	if resposta_selecionada != 0:
 		verificar_resposta(resposta_selecionada)
 	else:
@@ -120,10 +122,9 @@ func verificar_resposta(numero_resposta):
 		money = query_result[0].money + score
 		
 		var update_data = {"money": money}
-		var update_result = database.update_rows("users", condition, update_data)
-		print("Resposta correta!")
+		database.update_rows("users", condition, update_data)
 		
-		var challange_completed = database.update_rows("challanges", condition, {"challange01": "completed"})
+		database.update_rows("challanges", condition, {"challange01": "completed"})
 		$ConcludedChallange.visible = true
 		$IncorrectAnswer.visible = false
 		
@@ -131,15 +132,28 @@ func verificar_resposta(numero_resposta):
 		var world_instance = WorldConnection.new()
 		world_instance.update_challange_sprite(user_challanges)
 		
+		for challange in user_challanges:
+			var challanges_status = [
+				challange["challange01"],
+				challange["challange02"],
+				challange["challange03"],
+				challange["challange04"],
+				challange["challange05"]
+			]
+
+			if challanges_status.size() > 0 and challanges_status.all(func(item): return item == "completed"):
+				queue_free()
+				get_tree().change_scene_to_file("res://levels/nivel_concluded.tscn")
+		
 		database.close_db()
 	else:
 		score = score - 10
 		$IncorrectAnswer.visible = true
-		print("Resposta incorreta!")
 
 
 func _on_back_pressed() -> void:
 	queue_free()
+	click.play()
 	pass
 
 
@@ -173,7 +187,7 @@ func _on_help_pressed() -> void:
 	
 	var tip = tips_result[0].tip
 	var update_data = {"tip": tip - 1}
-	var update_result = database.update_rows("tips", condition, update_data)
+	database.update_rows("tips", condition, update_data)
 	atualizar_quantidade_dicas()
 	pass
 
@@ -202,7 +216,7 @@ func _on_ai_pressed() -> void:
 	
 	var ai = tips_result[0].ai
 	var update_data = {"ai": ai - 1}
-	var update_result = database.update_rows("tips", condition, update_data)
+	database.update_rows("tips", condition, update_data)
 	atualizar_quantidade_dicas()
 	pass
 
@@ -213,6 +227,11 @@ func _on_cards_pressed() -> void:
 	
 	var cards = tips_result[0].cards
 	var update_data = {"cards": cards - 1}
-	var update_result = database.update_rows("tips", condition, update_data)
+	database.update_rows("tips", condition, update_data)
 	atualizar_quantidade_dicas()
+	pass
+
+
+func _on_mouse_entered() -> void:
+	hover.play()
 	pass

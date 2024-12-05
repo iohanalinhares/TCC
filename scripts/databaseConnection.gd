@@ -36,7 +36,6 @@ func _ready():
 		var values = [user_id, 1, "not_completed", "not_completed", "not_completed", "not_completed", "not_completed"]
 		database.query_with_bindings(insert_table, values)
 		user_challanges = database.select_rows("challanges", condition, ["id, level, challange01, challange02, challange03, challange04, challange05"])
-		print('usuário adicionado')
 	
 	update_star_textures(user_challanges)
 	update_challange_sprite(user_challanges)
@@ -50,14 +49,13 @@ func _ready():
 	pass
 
 func update_challange_sprite(data):
-	print(data)
 	var challenges = data[0]
 	for i in range(1, 6):
 		var challenge_key = "challange0" + str(i)
 		var texture_challange_name = get_node("Challange0" + str(i) + "/SpriteChallange0" + str(i))
 		if challenges.has(challenge_key) and challenges[challenge_key] == "completed":
 			print(i)
-			print(texture_challange_name.texture)
+			#print(texture_challange_name.texture)
 			#texture_challange_name.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
 			
 # FUNÇÃO QUE PREENCHE AS ESTRELAS CONFORME QUANTIDADE DE DESAFIOS COMPLETADOS
