@@ -17,11 +17,14 @@ extends Node2D
 @onready var next: Button = $Next
 @onready var previous: Button = $Previous
 
+@onready var click = $ClickButton as AudioStreamPlayer
+
+var database = SQLite
+
 var sections: Array[ScrollContainer] = []
 var buttons: Array[Button] = []
 var translator
-
-var database = SQLite
+var query_result
 
 func _ready() -> void:
 	sections = [introdution, variables, operators, conditional_structure, loop_structure, functions]
@@ -34,7 +37,7 @@ func _ready() -> void:
 	var user_id = Global.user_id
 	
 	var condition = "id = '" + str(user_id) + "'"
-	var query_result = database.select_rows("users", condition, ["money, language"])
+	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
 	translator = preload("res://scripts/translation.gd").new()
@@ -175,4 +178,12 @@ func _update_navigation_buttons() -> void:
 
 func _on_exit_pressed() -> void:
 	queue_free()
+	pass
+
+
+func _on_button_pressed() -> void:
+	if query_result[0].sounds == 1:
+		click.play()
+	else:
+		click.stop()
 	pass

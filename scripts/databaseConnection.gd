@@ -2,10 +2,12 @@ extends Node2D
 
 var database = SQLite
 var translator
-#var new_texture = load("res://assets/icons/star-completed.png")
-
 var filled_texture = preload("res://assets/icons/star-completed.png")
 var empty_texture = preload("res://assets/icons/star.png")
+var query_result
+
+@onready var click = $ClickButton as AudioStreamPlayer
+@onready var music = $AudioStreamPlayer as AudioStreamPlayer
 
 func _ready():
 	database = SQLite.new()
@@ -15,13 +17,18 @@ func _ready():
 	var user_id = Global.user_id
 		
 	var condition = "id = '" + str(user_id) + "'"
-	var query_result = database.select_rows("users", condition, ["money, language"])
+	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
 
 	var money = $"Money"
 	if query_result:
 		money.text = str(query_result[0].money)
 	else:
 		money.text = "0"
+		
+	if query_result[0].music == 1:
+		music.play()
+	else:
+		music.stop()
 		
 	# VERIFICAÇÃO DO USUÁRIO NA TABLE CHALLANGES
 	var insert_table = """
@@ -54,9 +61,7 @@ func update_challange_sprite(data):
 		var challenge_key = "challange0" + str(i)
 		var texture_challange_name = get_node("Challange0" + str(i) + "/SpriteChallange0" + str(i))
 		if challenges.has(challenge_key) and challenges[challenge_key] == "completed":
-			print(i)
-			#print(texture_challange_name.texture)
-			#texture_challange_name.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
+			texture_challange_name.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
 			
 # FUNÇÃO QUE PREENCHE AS ESTRELAS CONFORME QUANTIDADE DE DESAFIOS COMPLETADOS
 func update_star_textures(data):
@@ -94,5 +99,10 @@ func _on_texture_button_help_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/how_to_play.tscn")
 	pass
 
-func teste():
-	print("Função teste() chamada do challange01!")
+
+func _on_button_pressed() -> void:
+	if query_result[0].sounds == 1:
+		click.play()
+	else:
+		click.stop()
+	pass

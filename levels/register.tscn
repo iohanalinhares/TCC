@@ -203,4 +203,6 @@ stream = ExtResource("3_lvyje")
 volume_db = -5.0
 
 [connection signal="button_down" from="Login/login-button" to="." method="_on_loginbutton_button_down"]
+[connection signal="pressed" from="Login/login-button" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="RegisterButton" to="." method="_on_register_button_button_down"]
+[connection signal="pressed" from="RegisterButton" to="." method="_on_button_pressed"]

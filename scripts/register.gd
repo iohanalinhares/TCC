@@ -1,6 +1,9 @@
 extends Node2D
 
+@onready var click = $ClickButton as AudioStreamPlayer
+
 var database : SQLite
+
 func _ready() -> void:
 	database = SQLite.new()
 	database.path = "res://database/database.db"
@@ -84,8 +87,8 @@ func _on_register_button_button_down() -> void:
 		"money": 50,
 		"level": 1,
 		"language": language,
-		"sounds": true,
-		"music": true,
+		"sounds": 1,
+		"music": 1,
 	}
 	
 	database.insert_row("users", data)
@@ -129,3 +132,8 @@ func hash_password(password: String) -> String:
 	ctx.update(password.to_utf8_buffer())
 	var hashed_password = ctx.finish().hex_encode()
 	return hashed_password
+
+
+func _on_button_pressed() -> void:
+	click.play()
+	pass

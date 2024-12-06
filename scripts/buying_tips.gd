@@ -8,6 +8,8 @@ var dynamic_scene = preload("res://levels/modal.tscn")
 var current_scene = null
 var money
 var user_id
+var query_result
+var condition
 
 func _ready() -> void:
 	database = SQLite.new()
@@ -21,9 +23,9 @@ func _ready() -> void:
 		VALUES(?, ?, ?, ?)
 	"""
 	
-	var condition = "id = '" + str(user_id) + "'"
+	condition = "id = '" + str(user_id) + "'"
 	var user_tips = database.select_rows("tips", condition, ["id"])
-	var query_result = database.select_rows("users", condition, ["money, language"])
+	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
 	translator = preload("res://scripts/translation.gd").new()
@@ -42,8 +44,7 @@ func _ready() -> void:
 	validacao_de_compra()
 	
 func select_money():
-	var condition = "id = '" + str(user_id) + "'"
-	var query_result = database.select_rows("users", condition, ["money, language"])
+	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
 	
 	# VERIFICA SE O USUÁRIO TEM PONTOS, SE NÃO TIVER SETA COMO 0
 	money = $"Money"
@@ -139,5 +140,8 @@ func _on_button_tips_3x_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
-	click.play()
-	pass # Replace with function body.
+	if query_result[0].sounds == 1:
+		click.play()
+	else:
+		click.stop()
+	pass

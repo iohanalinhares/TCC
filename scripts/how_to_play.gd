@@ -2,6 +2,7 @@ extends Node2D
 
 var database = SQLite
 var translator
+var query_result
 
 @onready var click = $ClickButton as AudioStreamPlayer
 
@@ -12,7 +13,7 @@ func _ready() -> void:
 	
 	var user_id = Global.user_id
 	var condition = "id = '" + str(user_id) + "'"
-	var query_result = database.select_rows("users", condition, ["language"])
+	query_result = database.select_rows("users", condition, ["language, sounds, music"])
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
 	translator = preload("res://scripts/translation.gd").new()
@@ -35,11 +36,13 @@ func _ready() -> void:
 	$ColorRectBorderUp/Description.text = translator.get_translation("help.up.description")
 	
 	$Back.text = translator.get_translation("buttons.conclude")
-	
 	pass
 
 
 func _on_back_pressed() -> void:
-	click.play()
+	if query_result[0].sounds == 1:
+		click.play()
+	else:
+		click.stop()
 	get_tree().change_scene_to_file("res://levels/world_01.tscn")
 	pass

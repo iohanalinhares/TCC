@@ -1,6 +1,9 @@
 extends Node2D
 
 var database = SQLite
+
+@onready var click = $ClickButton as AudioStreamPlayer
+
 func _ready() -> void:
 	database = SQLite.new()
 	database.path = "res://database/database.db"
@@ -83,3 +86,9 @@ func hash_password(password: String) -> String:
 func verify_password(hashed_password: String, entered_password: String) -> bool:
 	var entered_password_hash = hash_password(entered_password)
 	return hashed_password == entered_password_hash
+
+
+func _on_button_pressed() -> void:
+	click.play()
+	pass
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://68xby3a3adoh"]
+[gd_scene load_steps=5 format=3 uid="uid://68xby3a3adoh"]
 
 [ext_resource type="Script" path="res://scripts/login.gd" id="1_hmhjh"]
 [ext_resource type="Texture2D" uid="uid://b7xivf5tlfglv" path="res://assets/images/background-secondary.png" id="2_fd53r"]
+[ext_resource type="AudioStream" uid="uid://ce4jt2vnytw2e" path="res://sounds/button_click.wav" id="3_0ye0o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iceqq"]
 bg_color = Color(0.964706, 0.937255, 0.913725, 0.156863)
@@ -147,6 +148,12 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Usuário ou senha incorretos!"
 
+[node name="ClickButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0ye0o")
+volume_db = -5.0
+
 [connection signal="button_down" from="New-user/new-user-button" to="." method="_on_newuserbutton_button_down"]
+[connection signal="pressed" from="New-user/new-user-button" to="." method="_on_button_pressed"]
 [connection signal="focus_entered" from="Username/input-name" to="." method="_on_inputname_focus_entered"]
 [connection signal="button_down" from="Login" to="." method="_on_login_button_down"]
+[connection signal="pressed" from="Login" to="." method="_on_button_pressed"]

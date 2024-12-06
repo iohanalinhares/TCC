@@ -5,6 +5,7 @@ var database = SQLite
 @onready var label: Label = $Label
 @onready var money_label: Label = $Money
 @onready var cancel_button: Button = $Cancel
+@onready var click = $ClickButton as AudioStreamPlayer
 
 var tips_result
 var query_result
@@ -21,7 +22,7 @@ func _ready():
 	
 	condition = "id = '" + str(user_id) + "'"
 	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
-	query_result = database.select_rows("users", condition, ["language, money"])
+	query_result = database.select_rows("users", condition, ["language, money, sounds, music"])
 	cancel_button.pressed.connect(_on_cancel_pressed)
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
@@ -107,4 +108,12 @@ func _on_confirm_pressed():
 	
 	if update_result:
 		queue_free()
+	pass
+
+
+func _on_button_pressed() -> void:
+	if query_result[0].sounds == 1:
+		click.play()
+	else:
+		click.stop()
 	pass

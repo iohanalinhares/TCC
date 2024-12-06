@@ -27,7 +27,7 @@ func _ready() -> void:
 	user_id = Global.user_id
 
 	condition = "id = '" + str(user_id) + "'"
-	query_result = database.select_rows("users", condition, ["money, language"])
+	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
 	var challange_result = database.select_rows("challanges", condition, ["challange02"])
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
@@ -110,7 +110,7 @@ func atualizar_quantidade_dicas():
 	pass
 
 func _on_save_pressed() -> void:
-	click.play()
+	sounds_verification_click()
 	if resposta_selecionada != 0:
 		verificar_resposta(resposta_selecionada)
 	else:
@@ -154,22 +154,25 @@ func verificar_resposta(numero_resposta):
 
 
 func _on_back_pressed() -> void:
-	click.play()
+	sounds_verification_click()
 	queue_free()
 	pass
 
 
 func _on_confirm_pressed() -> void:
+	sounds_verification_click()
 	queue_free()
 	pass
 
 
 func _on_try_again_pressed() -> void:
+	sounds_verification_click()
 	$IncorrectAnswer.visible = false
 	pass
 
 
 func _on_help_pressed() -> void:
+	sounds_verification_click()
 	$AIResponse/Introdution/VBoxContainer/AIReturn.text = "Carregando..."
 		
 	var request = "Sem me dar a resposta correta, me dê uma dica sobre a questão no idioma:" + query_result[0].language + "
@@ -196,13 +199,14 @@ func _on_help_pressed() -> void:
 	pass
 	
 
-
 func _on_ok_pressed() -> void:
+	sounds_verification_click()
 	$AIResponse.visible = false
 	pass
 
 
 func _on_ai_pressed() -> void:
+	sounds_verification_click()
 	$AIResponse/Introdution/VBoxContainer/AIReturn.text = "Carregando..."
 
 	var request = "Me dê a alternativa correta e uma explicação dela no idioma:" + query_result[0].language + "
@@ -228,8 +232,8 @@ func _on_ai_pressed() -> void:
 	pass
 	
 
-
 func _on_cards_pressed() -> void:
+	sounds_verification_click()
 	$MarginContainer/VBoxContainer/Option_03.disabled = true
 	$MarginContainer/VBoxContainer/Option_04.disabled = true
 	
@@ -241,5 +245,14 @@ func _on_cards_pressed() -> void:
 
 
 func _on_mouse_entered() -> void:
-	hover.play()
+	if query_result[0].sounds == 1:
+		hover.play()
+	else:
+		hover.stop()
 	pass
+
+func sounds_verification_click():
+	if query_result[0].sounds == 1:
+		click.play()
+	else:
+		click.stop()
