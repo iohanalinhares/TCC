@@ -1,15 +1,17 @@
 # Objetivo do projeto
-Este projeto visa criar um jogo educacional WEB em formato RPG para ensinar programação de forma divertida onde o usuário pode escolher entre três linguagens de programação, Python, JavaScript e HTML/CSS. Destinado a uma ampla faixa etária e níveis de conhecimento, o jogo combina perguntas, explicações do assunto, um sistema de dicas e pontuação para incentivar o aprendizado. Animações, sons e música tornam a experiência interativa, e uma funcionalidade de feedback permite melhorias contínuas no jogo.
+Este projeto visa criar um jogo educacional WEB em formato RPG para ensinar programação de forma divertida e interativa. Destinado a uma ampla faixa etária e níveis de conhecimento, o jogo combina perguntas, explicações do assunto, um sistema de dicas e pontuação para incentivar o aprendizado. Animações, sons e música tornam a experiência interativa.
 
 # Tecnologias utilizadas
 ### Prototipação
 Para a criação e prototipação das telas do jogo, foi utilizado o software **Figma**, uma ferramenta amplamente reconhecida por sua eficiência na elaboração de interfaces visuais. O Figma permitiu a definição da paletas de cores e estilos, garantindo a coerência visual do jogo desde as fases iniciais do desenvolvimento.
 ### Gerenciamento de atividades
-O gerenciamento das atividades e tarefas do projeto é realizado por meio da plataforma **Trello**. As tarefas são organizadas em quadros, sendo classificadas de acordo com o nível de prioridade e estágio de desenvolvimento.
+O gerenciamento das atividades e tarefas do projeto foi realizado por meio da plataforma **Trello**. As tarefas são organizadas em quadros, sendo classificadas de acordo com o nível de prioridade e estágio de desenvolvimento.
 ### Desenvolvimento do jogo
 A plataforma escolhida para o desenvolvimento do jogo é a **Godot**, uma engine de código aberto que oferece uma grande flexibilidade para a criação tanto da parte gráfica quanto dos requisitos funcionais e integrações do jogo.
 ### Banco de Dados
-O banco de dados utilizado será o **SQLite**, uma solução leve e eficiente que se integra facilmente à plataforma Godot. O SQLite foi escolhido pela sua simplicidade de implementação e por fornecer uma conexão direta e rápida com o jogo, o que é essencial para garantir o bom desempenho do projeto sem comprometer a qualidade das funcionalidades de armazenamento de dados.
+O banco de dados utilizado foi o **SQLite**, uma solução leve e eficiente que se integra facilmente à plataforma Godot. O SQLite foi escolhido pela sua simplicidade de implementação e por fornecer uma conexão direta e rápida com o jogo, o que é essencial para garantir o bom desempenho do projeto sem comprometer a qualidade das funcionalidades de armazenamento de dados.
+### Sistema de Dicas Inteligente
+Para implementar o sistema de dicas, foi utilizada a **Gemini API do Google**, uma solução de inteligência artificial avançada que permite integrar modelos de linguagem ao jogo. Essa tecnologia possibilita a geração de dicas personalizadas, ajudando a solucionar desafios de maneira contextual e interativa. A integração com a API foi realizada por meio de requisições HTTP no Godot, garantindo que o sistema de dicas responda de forma eficiente.
 
 # Requisitos do projeto
 ### Requisitos funcionais
@@ -55,29 +57,17 @@ RFN07 – O sistema deve ter suporte bilíngue (português e inglês).
 # Metodologia de organização de tarefas
 A metodologia de gerenciamento de tarefas adotada desde o início do projeto é o **Kanban**, uma abordagem visual e flexível que facilita o acompanhamento do progresso das atividades. Essa estrutura permite uma visualização clara do fluxo de trabalho, identificando gargalos e ajustando o ritmo de desenvolvimento conforme necessário. Com essa metodologia, o processo se torna mais ágil, promovendo entregas frequentes e contínuas, além de proporcionar uma gestão eficiente das demandas e recursos ao longo do projeto.
 
-# Pacotes de entrega
-### Gerenciamento de projeto
-- Definir prazo das atividades
+# Diagramas
 
-### Pontapé inicial
-- Criar projeto no Godot
-- Criar repositório GitHub para publicação e versionamento do projeto
-- Criar banco de dados no SQLite
-- Escolher Tilesets para utilizar no projeto
+### Diagrama de Caso de Uso: Login
+![Diagrama de Caso de Uso - Login](/assets/images/README/Diagrama%20Caso%20de%20Uso%20-%20Login.png)
 
-### Desenvolvimento de telas
-- Desenvolver Mapa do Jogo
-- Desenvolver tela de Login
-- Desenvolver tela de Criação de Conta
-- Desenvolver tela de Recuperação de Senha
-- Desenvolver tela de Configurações
-- Desenvolver tela de Estudo Sobre o Assunto
-- Desenvolver tela de Atividades
-- Desenvolver tela de Dicas
-- Desenvolver tela de Compra de Dicas
-- Desenvolver tela de Nível Concluído
-- Desenvolver tela de Feedback
-- Desenvolver tela de Ajuda (termos básicos utilizados nas atividades)
+### Diagrama de Caso de Uso: Cadastro
+![Diagrama de Arquitetura](/assets/images/README/Diagrama%20Caso%20de%20Uso%20-%20Cadastro.png)
 
-# Acesso ao projeto
-Em desenvolvimento
+### Diagrama de Caso de Uso: Fluxo Completo
+![Diagrama de Arquitetura](/assets/images/README/Diagrama%20Caso%20de%20Uso%20-%20Fluxo%20Completo.png)
+
+### Diagrama de Arquitetura
+
+![Diagrama de Arquitetura](/assets/images/README/Diagrama%20de%20Arquitetura.png)
