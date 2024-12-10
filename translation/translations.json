@@ -25,6 +25,7 @@
 		"congratulations": "Congratulations!",
 		"nivelConcluded": "You have completed\nLevel 1: JavaScript",
 		"nextLevelConstruction": "The next level is still under construction and will be available soon!",
+		"noAlternativeSelected": "No alternative selected!",
 		"tips": {
 			"ai": "AI response",
 			"tip": "tip",
@@ -171,6 +172,7 @@
 		"congratulations": "Parabéns!",
 		"nivelConcluded": "Você concluiu o\nNível 1: JavaScript",
 		"nextLevelConstruction": "O próximo nível ainda está sendo\nconstruído e estará disponível em\nbreve!",
+		"noAlternativeSelected": "No alternative selected!",
 		"tips": {
 			"ai": "1 resposta de IA",
 			"tip": "1 dica",

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgmqhvhqv1ojq"
-path="res://.godot/imported/emote_drops.png-173dbaff658f8ede2b3ed717994a4f7c.ctex"
+uid="uid://bn27oioq7lblb"
+path="res://.godot/imported/TileSets.png-a1f25e1f86b3a34be4eb23199c7046c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_drops.png"
-dest_files=["res://.godot/imported/emote_drops.png-173dbaff658f8ede2b3ed717994a4f7c.ctex"]
+source_file="res://assets/images/README/TileSets.png"
+dest_files=["res://.godot/imported/TileSets.png-a1f25e1f86b3a34be4eb23199c7046c0.ctex"]
 
 [params]
 

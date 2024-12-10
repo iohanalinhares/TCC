@@ -107,11 +107,14 @@ func atualizar_quantidade_dicas():
 	pass
 
 func _on_save_pressed() -> void:
-	sounds_verification_click()		
+	sounds_verification_click()
 	if resposta_selecionada != 0:
 		verificar_resposta(resposta_selecionada)
+		$noAlternativeSelected.visible = false
 	else:
 		print("Nenhuma resposta selecionada!")
+		$noAlternativeSelected.text = translator.get_translation("noAlternativeSelected")
+		$noAlternativeSelected.visible = true
 	pass
 
 
@@ -227,6 +230,8 @@ func _on_cards_pressed() -> void:
 	sounds_verification_click()
 	$MarginContainer/VBoxContainer/Option_01.disabled = true
 	$MarginContainer/VBoxContainer/Option_02.disabled = true
+	$MarginContainer/VBoxContainer/Option_01.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$MarginContainer/VBoxContainer/Option_02.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	var cards = tips_result[0].cards
 	var update_data = {"cards": cards - 1}
