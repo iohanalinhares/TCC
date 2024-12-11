@@ -494,6 +494,7 @@ offset_right = 1864.0
 offset_bottom = 1065.0
 size_flags_horizontal = 3
 color = Color(0.0627451, 0.160784, 0.278431, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -56.0
@@ -609,6 +610,7 @@ tooltip_text = "Configurações"
 texture_normal = ExtResource("10_5d2lq")
 texture_pressed = ExtResource("14_jerv5")
 texture_hover = ExtResource("15_54pcg")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButtonHelp" type="TextureButton" parent="."]
 offset_left = 1774.0
@@ -619,6 +621,7 @@ tooltip_text = "Dúvidas frequentes"
 texture_normal = ExtResource("16_dqr2b")
 texture_pressed = ExtResource("17_y3kix")
 texture_hover = ExtResource("18_p1li0")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButtonTips" type="TextureButton" parent="."]
 offset_left = 1774.0
@@ -629,6 +632,7 @@ tooltip_text = "Compre novas dicas"
 texture_normal = ExtResource("19_0bmhy")
 texture_pressed = ExtResource("20_vp6kw")
 texture_hover = ExtResource("21_tffa1")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 1774.0
@@ -636,6 +640,7 @@ offset_top = 112.0
 offset_right = 1824.0
 offset_bottom = 162.0
 texture_normal = ExtResource("22_jn655")
+metadata/_edit_use_anchors_ = true
 
 [node name="Money" type="Label" parent="."]
 custom_minimum_size = Vector2(100, 0)
@@ -646,6 +651,7 @@ offset_bottom = 157.0
 theme_override_colors/font_color = Color(0.839216, 0.694118, 0.658824, 1)
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Star01" type="TextureRect" parent="."]
 offset_left = 508.0
@@ -654,6 +660,7 @@ offset_right = 548.0
 offset_bottom = 57.0
 size_flags_horizontal = 4
 texture = ExtResource("23_nnv1k")
+metadata/_edit_use_anchors_ = true
 
 [node name="Star02" type="TextureRect" parent="."]
 offset_left = 556.0
@@ -662,6 +669,7 @@ offset_right = 596.0
 offset_bottom = 57.0
 size_flags_horizontal = 4
 texture = ExtResource("23_nnv1k")
+metadata/_edit_use_anchors_ = true
 
 [node name="Star03" type="TextureRect" parent="."]
 offset_left = 604.0
@@ -670,6 +678,7 @@ offset_right = 644.0
 offset_bottom = 57.0
 size_flags_horizontal = 4
 texture = ExtResource("23_nnv1k")
+metadata/_edit_use_anchors_ = true
 
 [node name="Star04" type="TextureRect" parent="."]
 offset_left = 652.0
@@ -678,6 +687,7 @@ offset_right = 692.0
 offset_bottom = 57.0
 size_flags_horizontal = 4
 texture = ExtResource("23_nnv1k")
+metadata/_edit_use_anchors_ = true
 
 [node name="Star05" type="TextureRect" parent="."]
 offset_left = 700.0
@@ -686,6 +696,7 @@ offset_right = 740.0
 offset_bottom = 57.0
 size_flags_horizontal = 4
 texture = ExtResource("23_nnv1k")
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_oqxmb")

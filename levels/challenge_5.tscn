@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://dode01047uodb"]
 
-[ext_resource type="Texture2D" uid="uid://ctxd0v28pjbav" path="res://assets/images/background.png" id="1_fo1ms"]
 [ext_resource type="Script" path="res://scripts/score_challange_05.gd" id="1_oqm6t"]
+[ext_resource type="Texture2D" uid="uid://bh40h7b8fj2ix" path="res://assets/images/background-challanges.png" id="2_jps7n"]
 [ext_resource type="Texture2D" uid="uid://b1wcpip465haa" path="res://assets/images/activities/activity_5.png" id="2_vb5y6"]
 [ext_resource type="Texture2D" uid="uid://cru2pdcaaqfo" path="res://assets/images/level_completed_styled.png" id="4_185jt"]
 [ext_resource type="Texture2D" uid="uid://2nnefqov5e65" path="res://assets/icons/lamp-icon-normal.png" id="4_kiqkh"]
@@ -58,30 +58,22 @@ corner_radius_bottom_left = 2
 
 [node name="Challange" type="Node2D"]
 z_index = 5
-position = Vector2(460, 414)
+position = Vector2(960, 540)
 script = ExtResource("1_oqm6t")
-metadata/_edit_vertical_guides_ = [820.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -460.0
-offset_top = -414.0
-offset_right = 460.0
-offset_bottom = 414.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(0, 0, 0, 1)
-
-[node name="TextureRect" type="TextureRect" parent="ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_fo1ms")
+texture = ExtResource("2_jps7n")
 
 [node name="Title" type="HBoxContainer" parent="."]
 anchors_preset = 11

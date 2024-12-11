@@ -35,7 +35,7 @@ func update_money_label(user_id: int) -> void:
 	
 	var condition = "id = '" + str(user_id) + "'"
 	
-	# Verifica se o usuário existe na tabela 'tips', senão insere um novo registro
+	# VERIFICA SE O USUÁRIO EXISTE NA TABELA TIPS, SE NÃO, INSERE UM NOVO REGISTRO
 	var user_tips = database.select_rows("tips", condition, ["id"])
 	if not user_tips:
 		var values = [user_id, 1, 3, 3]

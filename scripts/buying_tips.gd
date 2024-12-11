@@ -41,8 +41,7 @@ func _ready() -> void:
 		var values = [user_id, 1, 3, 3]
 		user_tips = database.query_with_bindings(insert_table, values)
 		
-	select_money()
-	validacao_de_compra()
+	Global.update_money_label(user_id)
 	
 func select_money():
 	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
