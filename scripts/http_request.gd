@@ -10,7 +10,6 @@ func _ready():
 	add_child(http_request)
 	http_request.connect("request_completed", Callable(self, "_on_HTTPRequest_request_completed"))
 
-
 func make_gemini_request(text, target_node):
 	self.target_node = target_node
 	
@@ -41,7 +40,7 @@ func make_gemini_request(text, target_node):
 	if error != OK:
 		print("Erro ao fazer a requisição:", error)
 
-func _on_HTTPRequest_request_completed(response_code, headers, body):
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == 200:
 		var json = JSON.new()
 		var parse_result = json.parse(body.get_string_from_utf8())
@@ -50,6 +49,7 @@ func _on_HTTPRequest_request_completed(response_code, headers, body):
 			var resposta = json.get_data()
 			var texto_resposta = resposta["candidates"][0]["content"]["parts"][0]["text"]
 			texto_resposta = texto_resposta.replace("**", "")
+			print("Resposta da IA:", texto_resposta)
 			
 			if target_node and target_node.has_method("set_text"):
 				target_node.text = texto_resposta

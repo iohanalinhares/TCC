@@ -15,7 +15,6 @@ func _ready() -> void:
 	$"Username/input-name".grab_focus()
 	$"Username/input-name".focus_next = $"Password/input-password".get_path()
 	$"Password/input-password".focus_next = $"Username/input-name".get_path()
-	
 	pass
 
 func _on_newuserbutton_button_down() -> void:
