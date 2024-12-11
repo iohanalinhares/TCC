@@ -106,9 +106,7 @@ func atualizar_quantidade_dicas():
 		$Cards.disabled = false
 	pass
 
-const WorldConnection = preload("res://scripts/databaseConnection.gd")
-
-func _on_save_pressed() -> void:	
+func _on_save_pressed() -> void:
 	sounds_verification_click()
 	if resposta_selecionada != 0:
 		verificar_resposta(resposta_selecionada)
@@ -132,8 +130,6 @@ func verificar_resposta(numero_resposta):
 		$IncorrectAnswer.visible = false
 		
 		var user_challanges = database.select_rows("challanges", condition, ["id, level, challange01, challange02, challange03, challange04, challange05"])
-		var world_instance = WorldConnection.new()
-		world_instance.update_challange_sprite(user_challanges)
 		
 		for challange in user_challanges:
 			var challanges_status = [
@@ -148,6 +144,7 @@ func verificar_resposta(numero_resposta):
 				queue_free()
 				get_tree().change_scene_to_file("res://levels/nivel_concluded.tscn")
 		
+		Global.update_challenges(user_id)
 		database.close_db()
 	else:
 		score = score - 10
@@ -162,6 +159,7 @@ func _on_back_pressed() -> void:
 
 func _on_confirm_pressed() -> void:
 	sounds_verification_click()
+	Global.update_challenges(user_id)
 	queue_free()
 	pass
 
