@@ -17,6 +17,7 @@ func _ready() -> void:
 	database.open_db()
 	
 	user_id = Global.user_id
+	Global.main_scene = self
 	
 	var insert_table = """
 		INSERT INTO tips (id, ai, tip, cards)

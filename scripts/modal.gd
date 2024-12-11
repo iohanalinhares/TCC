@@ -12,13 +12,14 @@ var query_result
 var condition
 var typeButtonPressed
 var translator
+var user_id
 
 func _ready():
 	database = SQLite.new()
 	database.path = "res://database/database.db"
 	database.open_db()
 	
-	var user_id = Global.user_id
+	user_id = Global.user_id
 	
 	condition = "id = '" + str(user_id) + "'"
 	tips_result = database.select_rows("tips", condition, ["ai, tip, cards"])
@@ -107,6 +108,7 @@ func _on_confirm_pressed():
 			database.update_rows("users", condition, update_money)
 	
 	if update_result:
+		Global.update_money_label(user_id)
 		queue_free()
 	pass
 

@@ -45,9 +45,7 @@ func _ready():
 		var values = [user_id, 1, "not_completed", "not_completed", "not_completed", "not_completed", "not_completed"]
 		database.query_with_bindings(insert_table, values)
 		user_challanges = database.select_rows("challanges", condition, ["id, level, challange01, challange02, challange03, challange04, challange05"])
-	#
-	#update_star_textures(user_challanges)
-	#update_challange_sprite(user_challanges)
+	
 	Global.update_challenges(user_id)
 	
 	#IMPLEMENTAÇÃO DAS TRADUÇÕES PARA OS DOIS IDIOMAS
@@ -81,36 +79,8 @@ func update_challenges_ui(challenges: Dictionary) -> void:
 		var texture_challenge_node = get_node_or_null("Challange0" + str(i) + "/SpriteChallange0" + str(i))
 		if challenges.has(challenge_key) and challenges[challenge_key] == "completed":
 			texture_challenge_node.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
-			
-#func update_challange_sprite(data):
-	#var challenges = data[0]
-	#for i in range(1, 6):
-		#var challenge_key = "challange0" + str(i)
-		#var texture_challange_name = get_node_or_null("Challange0" + str(i) + "/SpriteChallange0" + str(i))
-		#if challenges.has(challenge_key) and challenges[challenge_key] == "completed":
-			#texture_challange_name.texture = preload("res://assets/kenney_emotes-pack/PNG/Vector/Style 1/emote_star.png")
-			#
-			#
-			#$Challange01/SpriteChallange01
-			
-# FUNÇÃO QUE PREENCHE AS ESTRELAS CONFORME QUANTIDADE DE DESAFIOS COMPLETADOS
-#func update_star_textures(data):
-	#var challenges = data[0]
-	#var completed_count = 0
-	#
-	#for i in range(1, 6):
-		#var challenge_key = "challange0" + str(i)
-		#if challenges[challenge_key] == "completed":
-			#completed_count += 1
-	#
-	#for i in range(1, 6):
-		#var star = get_node("Star0" + str(i))
-		#if i <= completed_count:
-			#star.texture = preload("res://assets/icons/star-completed.png")
-		#else:
-			#star.texture = preload("res://assets/icons/star.png")
-			#
-			
+
+
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/settings.tscn")
 	pass
