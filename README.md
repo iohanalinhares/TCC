@@ -109,4 +109,6 @@ Para instalar e configurar o jogo localmente, siga este passo a passo detalhado.
 - Disponibilização do jogo na internet, visando facilitar o acesso ao jogo, aumentar sua visibilidade e alcançar um público maior.
 
 # Execução do projeto
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0jPBaug8TJo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Confira a demonstração do jogo em ação! Clique na imagem abaixo para assistir ao vídeo diretamente no YouTube.
+
+[![Execução do jogo](https://img.youtube.com/vi/0jPBaug8TJo/0.jpg)](https://youtu.be/0jPBaug8TJo)
