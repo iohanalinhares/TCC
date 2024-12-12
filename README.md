@@ -1,6 +1,9 @@
 # Objetivo do projeto
 Este projeto visa criar um jogo educacional WEB em formato RPG para ensinar programação de forma divertida e interativa. Destinado a uma ampla faixa etária e níveis de conhecimento, o jogo combina perguntas, explicações do assunto, um sistema de dicas e pontuação para incentivar o aprendizado. Animações, sons e música tornam a experiência interativa.
 
+# Motivação do projeto
+A motivação para o desenvolvimento deste jogo é oferecer uma alternativa mais interativa e envolvente para quem deseja aprender programação de forma divertida e descontraída. Com uma proposta inovadora, o jogo se adapta a cenários educacionais, como escolas e universidades, tornando o processo de ensino mais dinâmico e acessível. Seu principal diferencial é a interatividade com o mapa do jogo, que, aliada a desafios e ao aprendizado da linguagem de programação, proporciona uma experiência única e enriquecedora para o usuário.
+
 # Tecnologias utilizadas
 ### Prototipação
 Para a criação e prototipação das telas do jogo, foi utilizado o software **Figma**, uma ferramenta amplamente reconhecida por sua eficiência na elaboração de interfaces visuais. O Figma permitiu a definição da paletas de cores e estilos, garantindo a coerência visual do jogo desde as fases iniciais do desenvolvimento.
@@ -104,3 +107,6 @@ Para instalar e configurar o jogo localmente, siga este passo a passo detalhado.
 - Implementação de outras linguagens de programação como forma de ensino com o objetivo de ampliar o alcance educacional do projeto.
 - Implementação de próximos níveis com o intúito de manter o aprendizado progressivo e engajar os jogadores, incentivando a continuidade nos estudos.
 - Disponibilização do jogo na internet, visando facilitar o acesso ao jogo, aumentar sua visibilidade e alcançar um público maior.
+
+# Execução do projeto
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0jPBaug8TJo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
