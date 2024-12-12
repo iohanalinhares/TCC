@@ -41,6 +41,8 @@ func update_money_label(user_id: int) -> void:
 		var values = [user_id, 1, 3, 3]
 		database.query_with_bindings("INSERT INTO tips (id, ai, tip, cards) VALUES (?, ?, ?, ?)", values)
 
-	if main_scene:
+	if main_scene.name == "World-01":
+		main_scene.select_money()
+	else:
 		main_scene.select_money()
 		main_scene.validacao_de_compra()

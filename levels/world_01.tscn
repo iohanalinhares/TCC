@@ -702,6 +702,7 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("24_oqxmb")
 volume_db = -15.0
 autoplay = true
+parameters/looping = true
 
 [node name="ClickButton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_hcoab")

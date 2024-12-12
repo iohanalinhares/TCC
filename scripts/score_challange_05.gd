@@ -145,6 +145,7 @@ func verificar_resposta(numero_resposta):
 				get_tree().change_scene_to_file("res://levels/nivel_concluded.tscn")
 				
 		Global.update_challenges(user_id)
+		Global.update_money_label(user_id)
 		database.close_db()
 	else:
 		score = score - 10
@@ -154,6 +155,7 @@ func verificar_resposta(numero_resposta):
 func _on_confirm_pressed() -> void:
 	sounds_verification_click()
 	Global.update_challenges(user_id)
+	Global.update_money_label(user_id)
 	queue_free()
 	pass
 

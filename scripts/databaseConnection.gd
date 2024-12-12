@@ -5,6 +5,7 @@ var translator
 var filled_texture = preload("res://assets/icons/star-completed.png")
 var empty_texture = preload("res://assets/icons/star.png")
 var query_result
+var condition
 
 @onready var click = $ClickButton as AudioStreamPlayer
 @onready var music = $AudioStreamPlayer as AudioStreamPlayer
@@ -18,7 +19,7 @@ func _ready():
 	
 	var user_id = Global.user_id
 		
-	var condition = "id = '" + str(user_id) + "'"
+	condition = "id = '" + str(user_id) + "'"
 	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
 
 	var money = $"Money"
@@ -105,4 +106,15 @@ func _on_button_pressed() -> void:
 		click.play()
 	else:
 		click.stop()
+	pass
+
+func select_money():
+	query_result = database.select_rows("users", condition, ["money, language, sounds, music"])
+	
+	# VERIFICA SE O USUÁRIO TEM PONTOS, SE NÃO TIVER SETA COMO 0
+	var money = $"Money"
+	if query_result:
+		money.text = str(query_result[0].money)
+	else:
+		money.text = "0"
 	pass
